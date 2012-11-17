@@ -1,0 +1,11 @@
+---
+layout: page
+title: "Table of Contents"
+---
+{% include JB/setup %}
+
+<ol style="list-style: none">
+{% for chapter in site.posts %}
+  <li><a href="{{ chapter.id }}">{{ chapter.title }}</a></li>
+{% endfor %}
+</ol>
