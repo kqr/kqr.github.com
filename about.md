@@ -5,7 +5,7 @@ title: "About"
 {% include JB/setup %}
 
 
-About Me
+About me
 --------
 
 I am Chris, a 20-odd year old ICT masters student from Sweden with a particular interest in fault-tolerant and/or distributed systems. I also enjoy photography, mathematics, natural languages, typography, design in general, procrastinating, learning things, nature, tea and cats. I like to consider myself a libertarian, upon further inspection however, you'll find that I'm a mess of mixed ideologies. But that is neither here nor there.
@@ -15,7 +15,7 @@ I've been programming since elementary school and sometimes it feels like I have
 I also have a problem with finishing things. I would really love to point to somewhere and say, "Look, I made that," but I can not. People tell me I do have a knack for both teaching and writing though, so I hope that will be good for this project.
 
 
-About the Book
+About the book
 --------------
 
 The things that make this book unique are
