@@ -4,6 +4,8 @@ title: "Haskell Programming"
 ---
 {% include JB/setup %}
 
+<img src="/images/haskell2.png" alt="Some Haskell code" width="600px">
+
 Hello!
 
 Whoever you are, you have arrived at my attempt to create an **open introductory book to programming**, aimed at people who are experienced with computers but have little to no programming knowledge. This book is unique in a few aspects, and therefore, you will not find a book like this one anywhere else.
