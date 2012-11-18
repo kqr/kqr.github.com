@@ -8,6 +8,7 @@ body {
     background: #fffffa;
     margin: 0px;
     font-family: Helvetica, Arial, sans-serif;
+    min-width: 860px;
 }
 
 div#notfooter {
@@ -165,7 +166,7 @@ footer {
 
 footer > div {
     overflow: hidden;
-    width: 600px;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -174,14 +175,14 @@ footer > div > nav {
     float: left;
     margin: none;
     padding: none;
-    margin-left: 96px;
+    margin-left: 146px;
 }
 
 footer > div > div {
     float: right;
     margin: none;
     padding: none;
-    margin-right: 96px;
+    margin-right: 146px;
 }
 
 footer ul {
