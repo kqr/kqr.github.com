@@ -28,7 +28,7 @@ Programming should of course also be a fun pastime. That is the most important p
 
 
 
-Programming Languages
+Programming languages
 ---------------------
 
 Just as languages like English, Chinese or Spanish are used to communicate between people, programmers need a language to communicate with the computer. These languages are called *programming languages* and there have been many different programming languages invented throughout the history of computing. Many were short-lived, many had a thriving user base but are now extinct, and comparatively few remain today. Most of the remaining languages are fairly new, but there are also some old ones that are just so good they refuse to die.
@@ -49,7 +49,7 @@ The car analogy tries to capture the nature of abstraction. Abstraction is how p
 
 The major difference between different programming languages is the varying level of abstraction they provide, to make communicating what we want with the computer easier. Some languages provides almost *no* abstractions at all, and are very similar to the number sequences of machine code. Other languages provides a lot of abstractions and would not be recognised as programming by someone in the 1940's. Today, we prefer not to speak machine code, because the language of computers is a difficult one. We prefer a language that provides us with as much abstraction as possible.
 
-Do I Need a Language?
+Do I need a language?
 -------------------
 
 Programming as a hobby does not require a language. A language is only needed when you wish to actually communicate with the computer. Programming is a pure logical matter, and the ideas can be formed without a language to form them in. However, as an aspiring programmer, you will benefit greatly from having a language to express your ideas in. For that purpose, I have chosen to use Haskell in this book.
