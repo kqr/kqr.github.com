@@ -78,6 +78,9 @@ article li {
     padding-left: 16px;
 }
 
+// makes ol look more like ul
+article ol > li { margin-left: 5px; }.
+
 code {
     background: #f7f7f7;
     padding: 2px;
