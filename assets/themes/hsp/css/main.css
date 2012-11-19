@@ -159,10 +159,11 @@ a:hover { text-decoration: none; color: #3377ff; }
 
 article > nav {
     margin-top: 32px;
-    padding-top: 32px;
-    margin-bottom: 64px;
+    padding-top: 0px;
+    margin-bottom: -32px;
     border-top: 1px solid #cccccc;
     text-align: center;
+    font-size: 32px;
 }
 
 article > nav > ul {
@@ -170,13 +171,15 @@ article > nav > ul {
     list-style: none;
     margin: none;
     padding: none;
+    padding-left: 120px;
 }
 
 article > nav > ul > li {
     display: inline;
-    margin-right: 32px;
+    margin-right: 120px;
     margin-left: 0px;
     padding-left: 0px;
+    //background: #ff0000;
 }
 
 footer {

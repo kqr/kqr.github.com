@@ -9,22 +9,21 @@
 <ul>
     
     <li>{% if page.previous %}
-        <a rel="prev" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+        <a rel="prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&#x21BB;</a>
         {% else %}
         &nbsp;
         {% endif %}
     </li>
 
-    <li>|</li>
-    <li><a href="#top">Top</a></li>
-    <li>|</li>
-
+    <li><a href="#top" title="To the top">&#x219F;</a></li>
+    
     <li>{% if page.next %}
-        <a rel="next" href="{{ page.next.url }}">{{ page.next.title }}</a>
+        <a rel="next" href="{{ page.next.url }}" title="{{ page.next.title }}">&#x21BA;</a>
         {% else %}
         &nbsp;
         {% endif %}
     </li>
+
 </ul>
 </nav>
 </article>
