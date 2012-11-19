@@ -126,6 +126,32 @@ body li {
     margin-bottom: 8px;
 }
 
+
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+td {
+    margin: 0px;
+    padding: 8px;
+    border: 1px solid #555555;
+}
+
+td > ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+td > ul > li {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 1em;
+}
+
+
 a { text-decoration: none; color: #777777; }
 a:visited { text-decoration: none; color: #777777; }
 a:hover { text-decoration: none; color: #3377ff; }
