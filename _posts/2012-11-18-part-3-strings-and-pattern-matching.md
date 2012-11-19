@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: "Part 3: Strings"
+title: "Part 3: Strings and case expressions"
 description: ""
 category: 
 tags: []
