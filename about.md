@@ -40,7 +40,7 @@ The name of the book was initially just "hsp" because I love random letter combi
 Code examples and exercises
 ---------------------------
 
-With each part or "chapter," I have provided a multitude of examples and exercises. The point of these is not to frustrate you, but to help you. I encourage you not to copy and paste the examples, but to write them out character by character yourself. By replicating manually you will learn a lot quicker. In [Part 2](/2012/11/18/part-2-input-and-output/), I compare copy pasting code examples to running the answers of your homework through a photocopier. While you might get a grade, you don't learn much about the subject.
+With each part or chapter, I have provided a multitude of examples and exercises. The point of these is not to frustrate you, but to help you. I encourage you not to copy and paste the examples, but to write them out character by character yourself. By replicating manually you will learn a lot quicker. In [Part 2](/2012/11/18/part-2-input-and-output/), I compare copy pasting code examples to running the answers of your homework through a photocopier. While you might get a grade, you don't learn much about the subject.
 
 The exercises are likewise there to help you. I highly suggest completing all of them before moving on to the next part, because a solid understanding of each part is almost a requirement for being able to grasp the next part. You may of course find yourself experimenting with the code as you read, and when you get to the exercises you have already completed half of them unknowingly. This is fine and there's no reason to redo them then.
 
