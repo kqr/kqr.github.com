@@ -34,15 +34,15 @@ The book is far from complete, but I will be continuously improving on it and ad
 
 Although I am the primary author of this book, I welcome all community support. There are links in the footer to access the source for the book and for reporting errors in the manuscript. If you are a developer, you are naturally free to fork me on GitHub.
 
-The name of the book was initially just "hsp" because I love random letter combinations, but I continued to accidentally subvocalise it as "hasp" so that's what it became. If you need order in your life, you can pretend it stands for HASkell Programming. But really, it doesn't. It doesn't mean anything.
+The name of the book was initially just "hsp" because I love random letter combinations, but I continued to accidentally subvocalise it as "hasp" so that's what it became. Incidentally, "hsp" is already the name of something Haskell related, whereas "hasp" seems relatively unclaimed as of yet. If you need order in your life, you can pretend "hasp" stands for HASkell Programming. But really, it doesn't. It doesn't mean anything.
 
 
 Code examples and exercises
 ---------------------------
 
-With each part or chapter, I have provided a multitude of examples and exercises. The point of these is not to frustrate you, but to help you. I encourage you not to copy and paste the examples, but to write them out character by character yourself. By replicating manually you will learn a lot quicker. In [Part 2](/2012/11/18/part-2-input-and-output/), I compare copy pasting code examples to running the answers of your homework through a photocopier. While you might get a grade, you don't learn much about the subject.
+With each part or chapter, I have provided a multitude of examples and exercises. The point of these is not to frustrate you, but to help you. I encourage you not to copy and paste the examples, but to write them out character by character yourself. By replicating manually you will learn a lot quicker. In [Part 2](/2012/11/15/part-2-input-and-output/), I compare copy pasting code examples to running the answers of your homework through a photocopier. While you might get a grade, you do not learn much about the subject.
 
-The exercises are likewise there to help you. I highly suggest completing all of them before moving on to the next part, because a solid understanding of each part is almost a requirement for being able to grasp the next part. You may of course find yourself experimenting with the code as you read, and when you get to the exercises you have already completed half of them unknowingly. This is fine and there's no reason to redo them then.
+The exercises are likewise there to help you. I highly suggest completing all of them before moving on to the next part, because a solid understanding of each part is almost a requirement for being able to grasp the next part. You may of course find yourself experimenting with the code as you read, and when you get to the exercises you have already completed half of them unknowingly. This is fine and then there's no reason to redo them.
 
 The exercises are listed roughly in order of difficulty, but there's no point in doing them in that order. Start with the first one, then try one in the middle, and then progress upward or downward depending on how easy the middle one was. I believe completing exercises is much more interesting if you do not do them from the first to the last, but mix challenging ones with boring ones.
 
@@ -53,5 +53,5 @@ License (CC BY-SA)
 ------------------
 Content on this site is licensed under a [Creative Commons Attribution-ShareAlike 3.0 license](creativecommons.org/licenses/by-sa/3.0/). For more information about Creative Commons, check out [their web page](http://creativecommons.org/).
 
-Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor are under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution. 
+Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor is under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution. 
 
