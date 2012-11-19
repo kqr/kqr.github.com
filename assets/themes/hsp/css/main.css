@@ -97,6 +97,7 @@ pre > code {
     display: block;
     font-size: 14px;
     padding: 8px;
+    overflow: auto;
 }
 
 pre {
