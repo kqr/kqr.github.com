@@ -106,20 +106,6 @@ None of the other I/O computations were performed. The general form of pattern m
 
 Haskell tries to match the value computed by `〈expression〉` against the listed patterns. It will start at the first pattern, and see whether it is equal to the value computed by `〈expression〉`. If it is, the expression to the right of the arrow will be computed, and no more patterns will be tried. If it is not, the expression to the right of the pattern will *not* be computed, and the next pattern will be tried. This goes on until it runs out of patterns to try, at which point the program crashes.
 
-It is important to note that *patterns are not the same things as values*. You can for example not do the following, because the user input is a value and not a pattern.
-
-    do greeting <- getLine
-       case "hello" of
-         greeting -> putStrLn "Hello to you too!"
-<div class="label">The interpreter will complain here! greeting is a value and not a pattern!</div>
-
-The other way around is okay, though, because then you are matching a value (the user input) against a pattern (the string.)
-
-    do greeting <- getLine
-       case greeting of
-         "hello" -> putStrLn "Hello to you too!"
-<div class="label">This is how you should write it. The value greeting is now matched against the pattern "hello".</div>
-
 The right arrows `->` (dash, greater than) do *not* need to be aligned. Sometimes it is nice to align them, and sometimes it makes the code harder to read. Whether or not to do it is completely up to the discretion of the programmer.
 
 You might wonder why the pattern matching stops at the first match. The reason for this is clear if you remember that every expression can only compute a single value. The `case` pattern matching is an expression too, and as such, it can only compute a *single* value. This value has been arbitrarily chosen to be the first matching value. This is also the reason that the code in the previous example did not output two lines, even though two patterns does technically match.
@@ -168,6 +154,20 @@ Now, matching against strings in the code is kind of useless, because you know t
 <div class="label">A simple guessing game</div>
 
 Here, the name `guess` is bound to the users input, and then pattern matched against the string `"rhino"` and the catch-all pattern `_`. If the user typed "rhino," the pattern matching will succeed on the `"rhino"` pattern and the success message will be printed. If the user typed anything else, the pattern matching will succeeed on the catch-all pattern and print the failure message.
+
+It is important to note that *patterns are not the same things as expressions*. You can for example not do the following, because the user input is an expression and not a pattern.
+
+    do greeting <- getLine
+       case "hello" of
+         greeting -> putStrLn "Hello to you too!"
+<div class="label">The interpreter will complain here! greeting is an expression and not a pattern!</div>
+
+The other way around is okay, though, because then you are matching an expression (the user input) against a pattern (the string.)
+
+    do greeting <- getLine
+       case greeting of
+         "hello" -> putStrLn "Hello to you too!"
+<div class="label">This is how you should write it. The expression greeting is now matched against the pattern "hello".</div>
 
 
 A naïve password mechanism
