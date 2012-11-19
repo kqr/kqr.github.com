@@ -40,6 +40,8 @@ and pressing return. The interpreter responds with a single string.
     Prelude> "Hello, " ++ "world!"
     "Hello, world!"
 
+When you type an expression in the interpreter, it will try to compute the value described by the expression and then display it back to you. In this case, the expression was computed to a single string, and it was printed back to you. The value that gets printed back to you is *not* something that would get printed if the expression was part of a normal program; it is only when you type expressions directly into <span class="textsc">GHCi</span> that their results will be printed.
+
 You constructed a single string from two strings. Just like you may use `+` to add two numbers in mathematics, Haskell uses `++` to add two strings together, end to end. The `++` operator is actually a function, and it is usually called the *list append* operator. To append two things means to put them together, end to end. I will refer to `++` as the *string* append operator, because that is what it does for us right now. And just like you can add several numbers together in mathematics, you can do the same with strings in Haskell.
 
     Prelude> "Hello, " ++ "world!" ++ " How " ++ "are you?"
