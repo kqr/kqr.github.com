@@ -37,6 +37,12 @@ Although I am the primary author of this book, I welcome all community support. 
 The name of the book was initially just "hsp" because I love random letter combinations, but I continued to accidentally subvocalise it as "hasp" so that's what it became. Incidentally, "hsp" is already the name of something Haskell related, whereas "hasp" seems relatively unclaimed as of yet. If you need order in your life, you can pretend "hasp" stands for HASkell Programming. But really, it doesn't. It doesn't mean anything.
 
 
+Updates to the book
+-------------------
+
+As this book is still under writing, I will constantly update it. Sometimes the updates are to parts that were released long ago, and these updates are not clearly visible unless you re-read the part. I will not announce updates, but if you wish to keep *à jour* with the latest updates, you can always [read the log at GitHub.com](https://github.com/kqr/kqr.github.com/commits/master). Some of the entries will have nonsensical names; these likely refer to changes "under the hood" of the page. When an entry refers to an updated part, it will be obvious that it does (it will say something along the lines of "update to part X.")
+
+
 Code examples and exercises
 ---------------------------
 
