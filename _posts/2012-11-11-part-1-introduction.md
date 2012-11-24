@@ -47,7 +47,18 @@ Imagine a car. Cars are vastly complex mechanical systems with cylinders, fuel p
 
 This car analogy tries to capture the nature of abstraction. Abstraction is how people make scary things less scary. The scary car becomes less scary when you are presented with only pedals and a steering wheel. We do the same with programming. We hide internals and provide simpler and better ways to interact with those internals.
 
-The major difference between different programming languages is the varying level of abstraction they provide, to make communicating what we want with the computer easier. Some languages provides almost *no* abstractions at all, and are very similar to the number sequences of machine code. Other languages provides a lot of abstractions and would not be recognised as programming by someone in the 1940's. Today, we prefer not to speak machine code, because the language of computers is a difficult one. We prefer a language that provides us with as much abstraction as possible.
+The major difference between different programming languages is the varying level of abstraction they provide. Lots of abstraction makes communicating what we want with the computer easier. Some languages provides almost *no* abstractions at all, and are very similar to the number sequences of machine code. We call these *low-level languages*. Other languages provides a lot of abstractions and would not be recognised as programming by someone in the 1940's. Not surprisingly, these are called *high-level languages*. Today, we prefer not to use a low-level language, because the language of computers is a difficult one. We generally prefer a high-level language that provides us with as much abstraction as possible.
+
+There is one problem with high-level languages, though. The general principle is that as you go to a higher level language, the development time will drastically decrease, but so will the speed of the program when it is run. In a high-level language, you can develop a program in a matter of days, but it will require five times as much computing power as the same program written over the course of a few months in a low-level language. This of course only applies when all else is equal. By the time someone has written a faster program in a low-level language, someone else might have come up with a more clever way to do the same thing in a higher-level language, thus turning out on top again. In this day and age when hardware is cheap, it is generally considered that the cost of programmer time is more valuable than the cost of computer time, and high-level languages provide the following benefits.
+
+ *  High-level code is easier to read and understand. This is fairly obvious, because it is closer to human thought processes and further from the metal of the computer. The programmer community have in large realised that code is read way more often than it is written, so writing programs that are easy to read is a very important thing to do.
+
+ *  In a high-level language, it is easier to express exactly what you mean, rather than what steps the computer should perform to reach what you mean. In a sense, your code "speaks for itself" about what happens to a larger degree. Low-level code is often cryptic and you have to sort of "pretend to be the computer" to figure out how a particular piece of code works.
+
+ *  Finding faults is often easier in high-level code, because you deal with concepts that are more familiar and intuitive than many of the concepts of low-level code. Say you have written a program to answer the question, "Is there a book in my bookshelf where the first name of the author is five letters long and starts with E?" Finding faults that program is made easy in high-level code by the fact that the program can be broken down into two or three smaller pieces, each of which can be searched for faults individually. In low-level code, it is not uncommon for such a program to be divided into 10 or 20 smaller pieces that interact in various ways and can not be searched for faults individually.
+
+As you probably noticed, we have touched on the points that started this chapter. High-level languages turn out to be a great tool to help us achieving the goals of good code.
+
 
 Do I need a language?
 -------------------
@@ -64,29 +75,48 @@ In the beginning, Haskell was mostly confined to research, but since the mid-199
 Haskell is Unique
 -----------------
 
-I have chosen to use Haskell for this book mainly because it gives you very powerful tools to think about programming as *performing computations*, rather than something else. Performing computations is really everything programming is about.
+Programming, at its core, is simply *performing computations* and then combining them and their results to form a larger picture. I have chosen to use Haskell for this book mainly because it is a very high-level language that gives you very powerful tools to do exactly that; to think of programming as performing computations. Many other languages, both low and high in level, focus on another view of programming -- they say that programming is about fiddling around with small parts at a time to sooner or later arrive at a larger picture.
 
-Haskell also enjoys a unique position among programming languages today. Although it has yet failed to achieve widespread adoption, Haskell is safe for the changes that will come in the immediate future, and learning Haskell is a worthwhile investment for what is to come. Even if you do not use Haskell later on, many of the concepts which Haskell pioneer are gradually transferred to other languages, and you will have immense use of your Haskell knowledge.
+Haskell also enjoys a unique position among programming languages today. Although it has yet failed to achieve the widespread adoption of e.g. Java or Python, the userbase of Haskell is growing larger by the minute. I believe the reasons for that are that Haskell is safe for the changes that will come in the immediate future. When other programming languages become obsolete, Haskell will be extended and continue to live on. This has been seen happening with other programming languages, and Haskell possesses everything it needs to continue being relevant for at least the future 40 years to come. Already, Haskell is pioneering some of the concepts which are only slowly creeping into other programming languages, so learning Haskell is definitely a worthwhile investment even if you do not use Haskell itself later on.
 
 Most of all, Haskell is free and open, and it is a lot of fun and an excellent language to teach the art of computation in because it is, alongside all this, designed for education purposes.
+
 
 Features of Haskell
 ---------------------
 
-(This section is a little technical. If you feel like most of the words are flying right over your head, skim it for interesting tidbits but do not concern yourself too much with the details.)
+There are two main approches to programming. One is called *declarative* programming, and programming declaratively means to view programs as combinations of *independent* computations. Consider the following declarative way to describe a process.
 
-Haskell is a *declarative* programming language. Most other programming languages are, by contrast, imperative. This means that a Haskell programmer will concern himself with *what* computation should be performed, and not *how* it is performed, as would a programmer of an imperative language would. A declarative *what* approach makes it easier to analyse code to make sure it is correct.
+ 1. Assume that `pinkify` means to paint something pink;
+ 2. Assume that `cars` is a name that refers to all the cars in this dealership;
+ 3. To perform an `action` on all items of a `collection`, you first perform `action` on the first item, then the next and so on until you reach the end;
+ 4. Show me what all `cars` would look like if you would perform `pinkify` on them.
 
-Haskell does not allow destructive updates; in Haskell, data cannot be accidentally (or intentionally) changed. New data can be created from old data, but old data can never be changed, and old data can never be removed. This provides safety against some errors in the code that might otherwise be hard to find if they could modify program data.
+First, we define two names, one for an action (painting something pink) and one for a collection of objects (cars in this case.) Then we define what it means to perform an action on multiple items. Then we perform the action on the entire dealership and take a look. The actual computation is performed by combining three independent sub-computations.
 
-Haskell is a *pure functional* language. This is partly a consequence of the previous constraint. Functions, the basic building blocks of Haskell, do not depend on any external variable. A function will never change its behaviour based on chance, a particular file not existing, the phase of the moon or anything else. If the function works in one context, it will work in *all other* contexts. To a new programmer, this might sound obvious, but it is actually the case in most of the mainstream programming languages that functions (or procedures or methods, as they are called there) can work in one context but be horribly broken in another.
+The opposite of declarative programming is called *imperative* programming. Imperative programming is less about combining independent sub-computations, and more about making a list of actions that the computer must perform to reach the desired goal. This is how the same process description might look like when you are programming imperatively:
 
-Similarly, a function in Haskell will never change any external variable. A function will never accidentally create thousands of files or launch the entirety of the forgotten Soviet nuclear arsenal. At least not without the programmer being *very* well aware that might happen. Haskell functions are completely isolated blocks of computation and can not affect the rest of the world in any way. While this isolation might seem like a disadvantage, there are ways to overcome the problems it creates, and it provides the programmer with excellent guaratees to make analysis of the code easier.
+ 1. Assume that `cars` is a name that refers to all the cars in this dealership;
+ 2. Assume that `current` is a name that refers to the car we are currently looking at;
+ 3. Set `current` to the first car in `cars` (i.e. look at the first car);
+ 4. Paint the `current` car pink;
+ 5. Set `current` to the next car in `cars`;
+ 6. Repeat from step 4 until `current` refers to the last car in `cars`;
+ 7. Now look at all the cars.
 
-Haskell is also a *lazily evaluated* language, which simply means that no computations will be performed until they are needed. Most other languages are eager in their computation strategy and will perform computations as soon as they can, even if the result of that computation is not needed at all. Haskell only computes things when they are needed.
+This is accomplishing the same thing, but with much more guidance from the programmer. We have to explicitly tell the program how to perform an action on all cars, and we cannot perform a generic action on all cars -- we have to repeat this definition for every action we want to perform. Worst of all, though, this second version *actually paints all the cars pink*. If you decide it was an ugly colour, you have to manually save somewhere which colour all the cars previously were so you can restore it.
 
-Although these are lots of restrictions, and it might feel uncomfortable to work under restrictions, they are all useful restrictions. They do not interfer with normal work, but they prevent lots of mistakes programmers often make. All of these points make Haskell a great language, and it is one of the few languages I feel are future-proof.
+Haskell is declarative, and as such, programs tend to get fairly small and are quick to write. The code is also easier to understand and fix when it goes wrong.
 
+In the previous example, we saw how the declarative version never actually painted over any previous cars. This is common for declarative languages and it is likewise true for Haskell. In fact, it is *not possible* to overwrite data in Haskell. You can create new data from old data, but you can never change or remove old data. Old data gets automatically removed when it is no longer used, but not until then. This provides safety against some errors in the code that might otherwise be hard to find if they by mistake could modify program data to effectively hide themselves.
+
+Partly as a consequence of the previous constraint, Haskell also tries its damnedest to prevent computations from interfering with each other. Each computation in Haskell is completely isolated and does not depend on any other computation. A computation will only be able to affect "the outside world" when the programmer is made aware of that risk. This is compared to pretty much all other programming languages where some magic line of "outside world" code may be hidden anywhere in a large project. It simply can not happen in Haskell. The programmer has full control of which parts of the code that may affect "the outside world."
+
+Haskell also never performs a computation unless it is absolutely necessary. All other mainstream languages try to perform a computation as soon as they can. Haskell only computes as much as it has to. In many cases, computations do not occur at all because the result is not needed. This, as it turns out, is a double-edged sword. If it can be mastered, it is very effective and beautiful.
+
+Haskell also keeps track of what kind of values you use. In Haskell, you can not even start a program that has the remote possibility of trying to drive a space shuttle like you would a motorcycle. To Haskell, a space shuttle and a motorcycle are two completely different things and if it is somehow possible for the program to mix them up, the program is considered unsafe. When writing normal code, of course, there should not be any possibility to mix motorcycles and space shuttles up, so this is a good thing.
+
+Many of these features makes it easier for us to build safe programs which run in somewhat controlled environments. I would describe Haskell as a very sharp and pointy language, and if you do not care for what you are doing, you will eventually run into those pointy bits and hurt yourself. If you do care for what you are doing, though, you can use the pointy bits to fend off evil.
 
 
 The Haskell Platform
