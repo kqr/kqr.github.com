@@ -329,4 +329,32 @@ Naturally, you can verify your answers for yourself by writing short Haskell pro
           return ()
           putStrLn "So are we done yet?"
           putStrLn "Sure."
+    <div class="label">An involved program with lots of print statements.</div>
+
+    While this might seem like a useless exercise, it is there to train you in thinking critically about data and realising the differences small things make. It should also be a relatively easy exercise if you have spent enough time playing with the things you have learned so far.
+
+ *  Create a simple calculator program. Make the program ask the user if they want to add, subtract or multiply, and then ask them for numbers and show them the result. Interaction with the program could look like the following.
+
+        Do you want to (a)dd, (s)ubtract or (m)ultiply?
+        m
+        Enter the first number.
+        3
+        Enter the second number.
+        4
+        The result is 12
+    <div class="label">Example interaction with a simple calculator.</div>
+
+    Or, if the user chooses to add,
+
+        Do you want to (a)dd, (s)ubtract or (m)ultiply?
+        a
+        Enter the first number.
+        2
+        Enter the second number.
+        9
+        The result is 11
+    <div class="label">Example interaction with a simple calculator.</div>
+
+    Concentrate on what values are strings and what are numbers to get this one right. You will first have to convert the strings from the user into numbers, then add those two numbers, before converting the result back to a string to print to the user!
+
 
