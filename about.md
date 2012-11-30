@@ -57,7 +57,7 @@ I do not believe in answer sheets, and therefore I have not provided any solutio
 
 License (CC BY-SA)
 ------------------
-Content on this site is licensed under a [Creative Commons Attribution-ShareAlike 3.0 license](creativecommons.org/licenses/by-sa/3.0/). For more information about Creative Commons, check out [their web page](http://creativecommons.org/).
+Content on this site is licensed under a [Creative Commons Attribution-ShareAlike 3.0 license](http://creativecommons.org/licenses/by-sa/3.0/). For more information about Creative Commons, check out [their web page](http://creativecommons.org/).
 
-Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor is under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution. 
+Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor is under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](http://creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution. 
 
