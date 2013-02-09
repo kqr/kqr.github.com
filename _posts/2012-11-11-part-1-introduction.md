@@ -2,7 +2,7 @@
 layout: post
 title: "Part 1: Introduction"
 description: ""
-category: 
+category:
 tags: []
 ---
 {% include JB/setup %}
@@ -51,11 +51,11 @@ The major difference between different programming languages is the varying leve
 
 There is one problem with high-level languages, though. The general principle is that as you go to a higher level language, the development time will drastically decrease, but so will the speed of the program when it is run. In a high-level language, you can develop a program in a matter of days, but it will require five times as much computing power as the same program written over the course of a few months in a low-level language. This of course only applies when all else is equal. By the time someone has written a faster program in a low-level language, someone else might have come up with a more clever way to do the same thing in a higher-level language, thus turning out on top again. In this day and age when hardware is cheap, it is generally considered that the cost of programmer time is more valuable than the cost of computer time, and high-level languages provide the following benefits.
 
- *  High-level code is easier to read and understand. This is fairly obvious, because it is closer to human thought processes and further from the metal of the computer. The programmer community have in large realised that code is read way more often than it is written, so writing programs that are easy to read is a very important thing to do.
+ *  **High-level code is easier to read and understand**. This is fairly obvious, because it is closer to human thought processes and further from the metal of the computer. The programmer community have in large realised that code is read way more often than it is written, so writing programs that are easy to read is a very important thing to do.
 
- *  In a high-level language, it is easier to express exactly what you mean, rather than what steps the computer should perform to reach what you mean. In a sense, your code "speaks for itself" about what happens to a larger degree. Low-level code is often cryptic and you have to sort of "pretend to be the computer" to figure out how a particular piece of code works.
+ *  **In a high-level language, it is easier to express exactly what you mean**, rather than what steps the computer should perform to reach what you mean. In a sense, your code "speaks for itself" about what happens to a larger degree. Low-level code is often cryptic and you have to sort of "pretend to be the computer" to figure out how a particular piece of code works.
 
- *  Finding faults is often easier in high-level code, because you deal with concepts that are more familiar and intuitive than many of the concepts of low-level code. Say you have written a program to answer the question, "Is there a book in my bookshelf where the first name of the author is five letters long and starts with E?" Finding faults that program is made easy in high-level code due to the fact that the program can be broken down into two or three smaller pieces, each of which can be searched for faults individually. In low-level code, it is not uncommon for such a program to be divided into 10 or 20 smaller pieces that interact in various ways and can not be searched for faults individually.
+ *  **Finding faults is often easier in high-level code**, because you deal with concepts that are more familiar and intuitive than many of the concepts of low-level code. Say you have written a program to answer the question, "Is there a book in my bookshelf where the first name of the author is five letters long and starts with E?" Finding faults that program is made easy in high-level code due to the fact that the program can be broken down into two or three smaller pieces, each of which can be searched for faults individually. In low-level code, it is not uncommon for such a program to be divided into 10 or 20 smaller pieces that interact in various ways and can not be searched for faults individually.
 
 As you probably noticed, we have touched on the points that described good code in the start of this chapter. High-level languages turn out to be a great tool to help us achieving the goals of good code.
 
@@ -75,15 +75,17 @@ In the beginning, Haskell was mostly confined to research, but since the mid-199
 Haskell is Unique
 -----------------
 
+If you just want to get into programming, you may want to skip down to "The Haskell Platform," where I tell you how to install Haskell and test that it works. The following two sections just provide a little detail about what makes Haskell different from other programming languages, and what makes me choose Haskell for this book.
+
 Programming, at its core, is simply *performing computations* and then combining them and their results to form a larger picture. I have chosen to use Haskell for this book mainly because it is a very high-level language that gives you very powerful tools to do exactly that; to think of programming as performing computations. Many other languages, both low and high in level, focus on another view of programming -- they say that programming is about fiddling around with small parts at a time to sooner or later arrive at a larger picture.
 
-Haskell also enjoys a unique position among programming languages today. Although it has yet failed to achieve the widespread adoption of e.g. Java or Python, the user base of Haskell is growing larger by the minute. I believe the reason for the constant growth is that Haskell is safe for the changes that will come in the immediate future; when other programming languages become obsolete, Haskell will be extended and continue to live on. This extension phenomenon has been observed with a few programming languages before, and Haskell does have everything it needs to continue being relevant for at least the future 20 years to come. Already, Haskell is pioneering some of the concepts which are only slowly creeping into other programming languages, so learning Haskell is definitely a worthwhile investment even if you do not use Haskell itself later on.
+Haskell also enjoys a unique position among programming languages today. Although it has yet failed to achieve the widespread adoption of e.g. Java or Python, the user base of Haskell is growing larger by the minute. I believe the reason for the constant growth is that Haskell is safe for the changes that will come in the immediate future; when other programming languages become obsolete, Haskell will be extended and continue to live on. This extension phenomenon has been observed with a few programming languages before, and Haskell has everything it needs to continue being relevant for at least the future 20 years to come. Already, Haskell is pioneering some of the concepts which are only slowly creeping into other programming languages, so learning Haskell is definitely a worthwhile investment even if you do not use Haskell itself later on.
 
-There are loads of libraries (other peoples code) for Haskell to download and use in your programs. There are libraries for <abbr>http</abbr>, general parsing, testing, compression, regular expressions, logging, markup, web services, databases, parallellism, statistics, hashing and many, many more.
+There are loads of libraries (other peoples code) for Haskell to download and use in your programs. There are libraries for <abbr>http</abbr>, general parsing, testing, compression, regular expressions, logging, markup, web services, databases, parallellism, statistics, hashing and many, many other common tasks.
 
-The Haskell community is warm and welcoming. Although many like to use academic words and strange terms for things, they are more than happy to explain anything to you. The Haskell community is one of the nicest programming language communities I have had experience with.
+The Haskell community is warm and welcoming. Although many like to use academic words and strange terms for things, they are more than happy to explain anything to you. The Haskell community is one of the nicest programming language communities I have had experience with. If you are confused about something -- *don't be afraid to ask!* The community will explain it to you as thoroughly as you need.
 
-Most of all, Haskell is free and open, and it is a lot of fun and an excellent language to teach the art of computation in because it is, alongside all this, designed for education purposes.
+Most of all, Haskell is free and open, and it is a lot of fun and an excellent language to teach the art of computation in because it is, alongside all this, designed for educational purposes.
 
 
 Features of Haskell
@@ -136,7 +138,7 @@ In addition to the <abbr>ghc</abbr> compiler, The Haskell Platform will provide 
 Testing the interpreter
 -----------------------
 
-Assuming The Haskell Platform is successfully installed, run `GHCi`. Although you *can* compile your Haskell code to machine code, I will mostly be using the interpreter throughout this book. Upon starting the interpreter, you should be presented with a version number, some extra lines about packages loading, and then the prompt
+Assuming The Haskell Platform is successfully installed, run `ghci`. Although you *can* compile your Haskell code to machine code, I will mostly be using the interpreter throughout this book. Upon starting the interpreter, you should be presented with a version number, some extra lines about packages loading, and then the prompt
 
     Prelude>
 
