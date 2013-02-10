@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 
 
-This chapter and the next is a little different. There will not be much code, but I will explain two really important concepts. Have a little patience, and I'll try to make this short.
+This chapter and the next is a little different. There will not be much code, but I will explain three really important concepts. Have a little patience, and I'll try to make this short.
 
 
 Side effects and purity
