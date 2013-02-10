@@ -126,6 +126,41 @@ The answer is no. Unfortunately. You can try it for yourself, but you'll be out 
 It is really uncommon for programming languages to support that way of chaining comparisons, for the same reasons as Haskell doesn't. In the next chapter, however, we will learn how Haskell (and indeed most programming languages) solves the problem!
 
 
+Pattern matching on boolean values
+----------------------------------
+
+How are boolean values useful in a program? As you might realise, we can pattern match on them, just like we could on numbers and strings. We can imagine the following program, which asks the user for two names and then compares them.
+
+    module Main where
+
+    main = do
+      putStrLn "Enter a name"
+      name_1 <- getLine
+      putStrLn "Enter another name, please"
+      name_2 <- getLine
+
+      case name_1 < name_2 of
+        True  -> putStrLn (name_1 ++ " comes before " ++ name_2 ++ " in the phone book!")
+        False -> putStrLn (name_1 ++ " comes after " ++ name_2 ++ " in the phone book!")
+<div class="label">A program pattern matching on boolean values</div>
+
+Just be sure that when you want to ask the user for numbers, you need to convert strings to numbers with `read` first. For example, you might want to make the following program.
+
+    module Main where
+
+    main = do
+      putStrLn "How old are you?"
+      age <- getLine
+
+      case read age < 47 of
+        True  -> putStrLn "You are younger than me!"
+        False -> putStrLn "You are older than me."
+
+Here it is worth mentioning that `read age < 47` works because `read age` automatically gets computed first. Generally, functions get computed before operators.
+
+If you combine operators (say, you want to do `4 + 3 < 6`) there is no easy way of telling whether or not you need parentheses, other than just trying both variants to see which produces correct results. Generally, things behave like you would expect them to (in our example, addition is performed before the lesser than test), but do not take that for granted. One of the legitimate complaints about Haskell is particularly this -- you have no real way of learning what gets computed first when you combine operators. (The only way is to ask someone who knows, try all variants for yourself or check the source code for the operator.)
+
+
 Exercises
 ---------
 
@@ -146,3 +181,15 @@ Exercises
 
  *  We have learned that Haskell uses phone book ordering to compare strings. Use the comparison operators to try to figure out what ordering Haskell follows to compare boolean values!
 
+ *  Use pattern matching to write a program that asks the user for their age, and output remarks for some kind of age milestones. The interaction with the user might look like
+
+        How old are you?
+        34
+        You probably knew how to read when you were 10
+        You were probably allowed to drive when you were 18
+        You probably had worked by 28
+        You've passed 30!
+
+    Hint: You can chain several `case` expressions after each other, as long as you line them up horizontally.
+
+    You might be tempted to do something like `real_age <- read age` to avoid having to type `read age` all the time. Try to fight the temptation. In the next chapter, you will get to know why it doesn't work, and you can improve your program then.
