@@ -31,7 +31,7 @@ There is an equality operator in Haskell, which takes two values and tests wheth
 
 We see that just like `+` is an operator that takes two numbers and returns a new number, and just like `++` is an operator that takes two strings and returns a string, `==` is an operator that takes numbers and returns a *boolean value*! The equality operator (as `==` is called) tests whether two things are equal, and then returns a boolean value to indicate that.
 
-If we experiment a little further, we will find that the equality operator also works on strings! For example, the following works fine.
+If we experiment a little further, we will find that the equality operator also works on strings. For example, the following works fine.
 
     Prelude> "carl" == "carl"
     True
@@ -123,7 +123,7 @@ We saw with numbers that we could add several things at once by doing `1 + 2 + 3
 
 The answer is no. Unfortunately. You can try it for yourself, but you'll be out of luck. It would be really neat, but it would violate a few principles of keeping things simple.
 
-It is really uncommon for programming languages to support that way of chaining comparisons, for the same reasons as Haskell doesn't. In the next chapter, however, we will learn how Haskell (and indeed most programming languages) solves the problem!
+It is really uncommon for programming languages to support that way of chaining comparisons, for the same reasons as Haskell doesn't. In a later chapter, however, we will learn how Haskell (and indeed most programming languages) solves the problem!
 
 
 Pattern matching on boolean values
@@ -144,7 +144,9 @@ How are boolean values useful in a program? As you might realise, we can pattern
         False -> putStrLn (name_1 ++ " comes after " ++ name_2 ++ " in the phone book!")
 <div class="label">A program pattern matching on boolean values</div>
 
-Just be sure that when you want to ask the user for numbers, you need to convert strings to numbers with `read` first. For example, you might want to make the following program.
+With this clever trick, we have made it possible to do fairly advanced decision making by our program. We evolved from a very simple kind of decision making that pattern matching allows, and went right into the heavy-duty territory of being able to make decisions based on almost any requirement.
+
+Just be sure that when you ask the user for numbers, you convert strings to numbers with `read` first. For example, you might want to make the following program.
 
     module Main where
 
@@ -158,7 +160,7 @@ Just be sure that when you want to ask the user for numbers, you need to convert
 
 Here it is worth mentioning that `read age < 47` works because `read age` automatically gets computed first. Generally, functions get computed before operators.
 
-If you combine operators (say, you want to do `4 + 3 < 6`) there is no easy way of telling whether or not you need parentheses, other than just trying both variants to see which produces correct results. Generally, things behave like you would expect them to (in our example, addition is performed before the lesser than test), but do not take that for granted. One of the legitimate complaints about Haskell is particularly this -- you have no real way of learning what gets computed first when you combine operators. (The only way is to ask someone who knows, try all variants for yourself or check the source code for the operator.)
+If you combine operators, on the other hand, (say, you want to do `4 + 3 < 6`) there is no easy way of telling whether or not you need parentheses, other than just trying both variants to see which produces correct results. Generally, things behave like you would expect them to (in our example, addition is performed before the lesser than test), but do not take that for granted. One of the legitimate complaints about Haskell is precisely this -- you have no real way of learning what gets computed first when you combine operators. (The only way is to ask someone who knows, try all variants for yourself or check the source code for the operator.)
 
 
 Exercises

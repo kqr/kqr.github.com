@@ -25,7 +25,7 @@ The arithmetic we know is useless if we can not employ it to perform something i
     ...
 <div class="label">The error message that ensues when we try to print a number</div>
 
-This is because `putStrLn` expects a *string*, but we're handing it a number! We need a way to turn the number into a string, and luckily, Haskell comes with a function to do precisely that! The function `show` converts the number `53` to the string `"53"`. Stay in the interpreter with me for just a minute more, and we will take `show` for a spin.
+This is because `putStrLn` expects a *string*, but we're handing it a number. We need a way to turn the number into a string, and luckily, Haskell comes with a function to do precisely that. The function `show` converts the number `53` to the string `"53"`. Stay in the interpreter with me for just a minute more, and we will take `show` for a spin.
 
     Prelude> show 53
     "53"
@@ -76,7 +76,7 @@ which will produce the output
 Converting strings to numbers
 -----------------------------
 
-If we instead want to receive numbers from the user, we encounter the opposite problem! The user will be entering a string, but we want it to be a number! Remember that strings and numbers are entirely different things, as far as Haskell cares. (And this is indeed true for almost every programming language.) What we need is some kind of "reverse `show`," that will take a string and give us back a number. Fortunately for us, there exists such a function! It is called `read`.
+If we instead want to receive numbers from the user, we encounter the opposite problem! The user will be entering a string, but we want it to be a number. Remember that strings and numbers are entirely different things, as far as Haskell cares. (And this is indeed true for almost every programming language.) What we need is some kind of "reverse `show`," that will take a string and give us back a number. Fortunately for us, there exists such a function. It is called `read`.
 
 If you try to use `read` in <abbr>ghc</abbr>i, you will encounter an error.
 
@@ -87,12 +87,12 @@ If you try to use `read` in <abbr>ghc</abbr>i, you will encounter an error.
           (Read a0) arising from a use of `read'
 <div class="label">Ambiguous type variable! Haskell doesn't know what you want to convert "43" <em>to</em>.</div>
 
-The problem is that read doesn't only convert from strings to numbers -- it converts from strings to a lot of different types of values. Haskell simply doesn't know what you want to convert *to*. If you use the value in a computation later on, this usually doesn't become a problem, because Haskell can figure out what you want to convert it to based on how you use it. For example, if we try to use `floor` on the value we get out, it looks like the following
+The problem is that read doesn't only convert from strings to numbers -- it converts from strings to a lot of different kinds of values. Haskell simply doesn't know what you want to convert *to*. If you use the value in a computation later on, this usually doesn't become a problem, because Haskell can figure out what you want to convert it to based on how you use it. For example, if we try to use `floor` on the value we get out, it looks like the following.
 
     Prelude> floor (read "3.1415926")
     3
 
-This time around, Haskell knows that you want to convert `"3.1415926"` to a number, because `floor` in turn expects numbers. This is one of the magic things Haskell has that not all languages have. (Remember, things in parentheses are computed first, so this is completely okay to write. It goes from `floor (read "3.1415926")` to `floor 3.1415926` to just `3`)
+This time around, Haskell knows that you want to convert `"3.1415926"` to a number, because `floor` in turn expects numbers. This is one of the magic things Haskell does that not all languages can do. (Remember, things in parentheses are computed first, so this is completely okay to write. When the computer computes it, it goes from `floor (read "3.1415926")` to `floor 3.1415926` to just `3`.)
 
 We could use `read`, for example, to pattern match against a number the user enters.
 

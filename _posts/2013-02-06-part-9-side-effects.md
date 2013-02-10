@@ -18,11 +18,13 @@ I would like to elaborate briefly on so-called "side effects." An expression lik
 
 There is another kind of expression though, and you have used it a lot. Remember that `putStr "hello"` is also an expression? It does compute a value (a value we still are not going to care for) but it also produces text on the screen. The result, as far as the user is concerned, is different each time it is computed. The first time the result will be the text "hello" on the screen. The second time around, the result will be "hellohello" on the screen. This kind of expression is called "impure" and we say that it has "side effects."
 
-Remember that there is a distinction in Haskell between "pure" expressions, that simply compute a value, and expressions with "side effects," that can change the world in some way. All IO computations have side effects.
+Remember that there is a distinction in Haskell between "pure" expressions, that simply compute a value, and expressions with "side effects," that can change the world in some way. All I/O computations have side effects.
 
 A `putStr` computation is still a fairly predictable expression. One that is a lot worse is `getLine`. If your program is not run by a very simple-minded user, the line of text you get from the user will be different almost every time `getLine` is computed. Contrast this to something like `4 + 7` where the result will be the same all the time. Haskell sees expressions that generate different things each time they are run as something bad, and strives to isolate the unpredictable parts of a program as much as possible. This is why someone coming from other programming languages might think that `getLine` behaves a little different from what they are used to.
 
-`getLine` does compute a value that is complete gibberish to us, just like `putStr`. We are not interested in the value that `getLine` computes, we are only interested in the line of user input that happened as a side effect. The line of user input is not a calculated value but a string originating from the keyboard or another input source. To get the user input from `getLine`, we need to bind a name to it with the left arrow (`<-`.) We *must* do that to be able to use the line the user typed. If we do not do that, the line the user typed will be thrown into cyberspace and we are left with an unusable gibberish value from `getLine`.
+`getLine` does compute a value that is complete gibberish to us, just like `putStr`. We are not interested in the value that `getLine` computes, we are only interested in the line of user input that happened as a side effect. The line of user input is not a calculated value but a string originating from the keyboard or another input source.
+
+To get the user input from `getLine`, we need to bind a name to it with the left arrow (`<-`.) We *must* do that to be able to use the line the user typed. If we do not do that, the line the user typed will be thrown into cyberspace and we are left with an unusable gibberish value from `getLine`.
 
 This way of comparing two input strings is correct.
 
