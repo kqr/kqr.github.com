@@ -115,7 +115,9 @@ Interaction with this program might look something like the following.
     16
     You'll be getting off of work soon!
 
-You might say that you do not want to display any text to the user if he or she enters an hour different from the ones listed. This is possible by computing the expression `return ()`. Essentially, `return ()` means "do nothing." It is a very confusing expression to indicate doing nothing, but the reasons for that are  academic and theoretical, so we will avoid them for the time being.
+In this case, `read` works because Haskell sees that the patterns you are trying to match against are numbers, so it assumes you want to convert `hour` to a number.
+
+You might say that you do not want to display any text to the user if he or she enters an hour different from the ones listed. This is possible by computing the I/O computation `return ()`. Essentially, `return ()` means "perform some kind of I/O that does nothing the user will ever notice." It is a very confusing expression to indicate doing nothing, but the reasons for that are  academic and theoretical. We will avoid them for the time being.
 
 If we want to do nothing for any other hour than 11, 16 and 22 in the previous example, we write the pattern matching like this:
 
