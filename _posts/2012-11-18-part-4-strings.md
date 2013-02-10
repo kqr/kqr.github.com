@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Part 4: Strings"
