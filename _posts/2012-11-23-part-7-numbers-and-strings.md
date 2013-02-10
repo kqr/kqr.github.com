@@ -84,7 +84,7 @@ If we instead want to receive numbers from the user, we encounter the opposite p
       putStrLn "Please enter the current hour."
       hour <- getLine
 
-      case (read hour) of
+      case read hour of
         11 -> putStrLn "Aren't you getting hungry?"
         16 -> putStrLn "You'll be getting off of work soon!"
         22 -> putStrLn "You certainly have to be tired now."
@@ -101,7 +101,7 @@ You might say that you do not want to display any text to the user if he or she 
 
 If we want to do nothing for any other hour than 11, 16 and 22 in the previous example, we write the pattern matching like this:
 
-    case (read hour) of
+    case read hour of
       11 -> putStrLn "Aren't you getting hungry?"
       16 -> putStrLn "You'll be getting off of work soon!"
       22 -> putStrLn "You certainly have to be tired now."
