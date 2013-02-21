@@ -67,12 +67,20 @@ article > h2 {
     margin-bottom: 18px;
 }
 
-article > p {
+article p {
     text-indent: 1em;
     text-align: justify;
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 18px;
+}
+
+article > blockquote {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 4px 12px 2px 12px;
+    background-color: #ffcccc;
+    border: 3px solid #ffaaaa;
 }
 
 article li {
