@@ -67,23 +67,32 @@ As you might imagine, multiplication and division is similar too.
 
 There is however one caveat when doing simple arithmetic like this. The curious reader has already encountered it. You seem to be unable to use a negative number in an expression -- if you try, you will get a nasty-looking error message.
 
-    Prelude> 9 + -8
+<pre>Prelude&gt; 9 + -8
 
-    <interactive>:12:1:
-       Precedence parsing error
-           cannot mix `+' [infixl 6] and prefix `-' [infixl 6] in the same infix expression
+&lt;interactive&gt;:12:1:
+   Precedence parsing error
+       cannot mix `+' [infixl 6] and prefix `-' [infixl 6] in the same infix expression</pre>
 
 The way to solve this is to wrap the negative numbers in parentheses. Entering the following works fine, because then `(-8)` is computed to a negative number before the addition occurs.
 
     Prelude> 9 + (-8)
     1
 
-You may of course mix different arithmetic operators to compute more complex expressions. You will notice that operators follow the precedence rules we are used to from mathematics, i.e. `3 + 5 * 2` is equal to `13`, while `(3 + 5) * 2` is equal to `16`. Naturally, keeping track of your parentheses is important as it makes a huge difference to the computed value.
+You may of course mix different arithmetic operators to compute more complex expressions. You will notice that operators follow the rules for applying operations that we are used to from mathematics, i.e. `3 + 5 * 2` is equal to `13`, while `(3 + 5) * 2` is equal to `16`. Naturally, keeping track of your parentheses is important as it makes a huge difference to the computed value.
 
     Prelude> (3 + 4 * 12) - 7 * (-1) / 4
     52.75
     Prelude> (3 + 4 * 12 - 7) * (-1) / 4
     -11.0
+
+> In schools in the US, children learn a mnemonic for remembering the order of operations. If you remember "<abbr>PEMDAS</abbr>" and that it means
+>
+> 1. Parentheses
+> 2. Exponents
+> 3. Multiplication and division
+> 4. Addition and subtraction
+>
+> you'll be fine.
 
 
 Fractional numbers
@@ -117,9 +126,9 @@ If you do not wrap the division in parentheses, Haskell will parse your expressi
 
 and throw an error message. The error message might seem uncalled for, and that is true. This is once again a place where we run into the mess that is numbers in Haskell.
 
-Do you know the story of what the doctor replied when his patient came in complaining that, "It hurts when I do this?" The doctor replied dryly, "Then stop doing that." For the time being, I am going to ask you to not divide with the thing you get out of any of the three functions that convert fractional numbers to integers.
+There is a funny story about a snarky doctor with his patient, and it goes something like this. A patient comes into the doctors office and says, "It hurts when I do this." The doctor replies dryly, "Then stop doing that." For the time being, I am going to be the snarky doctor and ask you to not divide with the thing you get out of any of the three functions that convert fractional numbers to integers.
 
-The technical reason for why is that you cannot use `/` for division with integers in Haskell, only fractional numbers. Something like `18` will automatically get converted to a fractional number, but if you type `floor 18`, Haskell will see that you explicitly mean 18 as an integer, and therefore it will refuse converting and the division will fail.
+> The technical reason for why it behaves like that is that you cannot use `/` for division with integers in Haskell, only fractional numbers. Something like `18` will automatically get converted to the fractional number `18.0`, but if you type `floor 18`, Haskell will see that you explicitly mean 18 as an integer, and therefore it will refuse converting and the division will fail.
 
 
 Exercises

@@ -30,7 +30,7 @@ Pattern matching in Haskell might look something like what you see in the follow
 
 If you run this program, you will only get the output
 
-    Well hello!
+<pre>Well hello!</pre>
 
 None of the other I/O computations were performed. The general form of pattern matching is
 
@@ -71,7 +71,7 @@ The underscore pattern has the unique property that it matches against *every* v
 
 In this example, the value I want to match is a misspelling of the word "hello." It will not match against any pattern other than the underscore, so the output of the program will be
 
-    Value not recognised.
+<pre>Value not recognised.</pre>
 
 
 Pattern matching on user input
@@ -125,7 +125,7 @@ Pattern matching can be used to provide a naïve username and password mechanism
       password <- getLine
       putStrLn "Authenticating..."
 
-      case (username ++ "/" ++ password) of
+      case username ++ "/" ++ password of
         "steve/secret123" -> do
             putStrLn "Username and password correct."
             putStrLn "Secret message: Moondust collected!"
@@ -171,15 +171,15 @@ Exercises
 
  *  Extend the program of the previous exercise so that it compliments the location of the user not only if it is the right city, but also if it is the right country, continent or planet. The exchange can look like
 
-         Where do you live?
-         Zürich
-         Zürich, huh? Great place to live.
+    <pre>Where do you live?
+    Zürich
+    Zürich, huh? Great place to live.</pre>
 
     or an exchange with *the same program* (only the input has changed) could look like
 
-         Where do you live?
-         Europe
-         Europe, huh? Great place to live.
+    <pre>Where do you live?
+    Europe
+    Europe, huh? Great place to live.</pre>
 
  *  Write a program that reads three lines from the user, and outputs something special if *all three lines are empty*. This will require a trick on your part to successfully detect whether all the inputs are empty or not. Programming is really about being clever in finding these kinds of tricks. Hint: Use the string append operator.
 
@@ -187,23 +187,23 @@ Exercises
 
     Modify the naïve authenticating program so that it aborts early if the username is wrong, but continues to check the password if the username is right. If the user types the wrong username, the interaction could look like
 
-        Username:
-        john
-        Password:
-        poodle12
-        Authenticating...
-        Wrong username!
-        End of transmission.
+    <pre>Username:
+    john
+    Password:
+    poodle12
+    Authenticating...
+    Wrong username!
+    End of transmission.</pre>
 
     Otherwise, if the password is wrong, it could look like
 
-        Username:
-        steve
-        Password:
-        poodle12
-        Authenticating...
-        Wrong password!
-        End of transmission.
+    <pre>Username:
+    steve
+    Password:
+    poodle12
+    Authenticating...
+    Wrong password!
+    End of transmission.</pre>
 
     If both the username and the password is right, the interaction can look just like it did in the example.
 
@@ -213,32 +213,32 @@ Exercises
 
  *  Write a little quiz program, that asks a few questions that the user has to answer. Interaction might look something like
 
-        What is first name of Waters in Pink Floyd?
-        > Roger
+    <pre>What is first name of Waters in Pink Floyd?
+    > Roger
 
-        Correct!
+    Correct!
 
-        How many questions are there in this quiz?
-        > 2
+    How many questions are there in this quiz?
+    > 2
 
-        Wrong!
+    Wrong!
 
-        What is the airspeed velocity of an unladen swallow?
-        > African or European?
+    What is the airspeed velocity of an unladen swallow?
+    > African or European?
 
-        Aaaaargh!
+    Aaaaargh!</pre>
 
     Try to beat your own quiz! See what happens if you answer something like "roger" instead of "Roger."
 
- *  I have provided the following code for you. Save it and load it into <abbr>GHC</abbr>i and try to figure out what the `uncapitalise` function does. Hint: It takes only one argument.
+ *  I have provided the following code for you. The second line makes the function `toLower` from the module `Data.Char` available, so that the `uncapitalise` function can use it.
 
         module Main where
-        import Data.Char
+        import Data.Char (toLower)
 
         uncapitalise = map toLower
     <div class="label">A snippet of ready-made code to enhance your program... if you can apply it correctly!</div>
 
-    Remember that using a function is simply writing the name of it followed by its arguments, space separated, so you would do something like
+    Copy the program and load it into <abbr>GHC</abbr>i and try to figure out what the `uncapitalise` function does. Hint: It takes only one argument. Remember that using a function is simply writing the name of it followed by its arguments, space separated, so you would do something like
 
         *Main> uncapitalise 〈argument〉
 

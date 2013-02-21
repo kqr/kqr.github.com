@@ -31,11 +31,11 @@ The traditional introduction to any programming language is the "Hello, world" p
 
 Name the file something like `hello_world.hs`. Haskell source code traditionally uses the `.hs` file extension. To run this code, you need to open up `GHCi` in the same directory as the file you just saved, and then in the interpreter, type `:load hello_world.hs`. This will load your code into the interpreter and prepare it for running. When it comes back to the prompt, just type `main` and press return to start your first program. The exchange will look something like this:
 
-    Prelude> :load hello_world.hs
-    [1 of 1] Compiling Main             ( hello_world.hs, interpreted )
-    Ok, modules loaded: Main.
-    *Main> main
-    Hello, world!
+<pre>Prelude&gt; :load hello_world.hs
+[1 of 1] Compiling Main             ( hello_world.hs, interpreted )
+Ok, modules loaded: Main.
+*Main&gt; main
+Hello, world!</pre>
 <div class="label">Loading the "Hello, world" program into GHCi</div>
 
 It is important that you copy this program, and all the other example programs, into your computer manually, character by character. Like when learning any language, you need to type the words several times before you know their spelling. If you pass a French exam by putting the answers sheet in the photocopier, you will not learn a single word French -- although you might become an expert on the photocopier. In the same fashion, if you want to learn Haskell properly, you will have to type the example programs literally into your computer every time. It may seem tedious at first, but as soon as you get to know Haskell better, it will become a breeze.
@@ -162,7 +162,7 @@ Exercises
 
     The Western variation of the Haiku consists of three lines, where the first and last have five syllables, and the middle one has seven. Come up with your own poem or try to reproduce the following output.
 
-        Coding is like art;
-        Nobody understands you,
-        And neither will you.
+    <pre>Coding is like art;
+    Nobody understands you,
+    And neither will you.</pre>
     <div class="label">An example of a Western Haiku poem</div>

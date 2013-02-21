@@ -1,0 +1,157 @@
+
+/*
+ * "kqrless" theme for SHJS
+ * 2012–2013 © ~kqr (CC BY-SA)
+ */
+
+
+pre.sh_sourceCode {
+  /* This is handled by the site layout,
+   * since its supposed to apply to all
+   * pre:s, even though they don't all
+   * contain Haskell source code. */
+}
+
+pre.sh_sourceCode .sh_keyword {
+  color: #cb7f43;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_specialchar {
+  color: #cb7f13;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_type {
+  color: #2277ff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_string {
+  color: #60b040;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_regexp {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_comment {
+  color: #777777;
+  font-weight: normal;
+  font-style: italic;
+}
+
+pre.sh_sourceCode .sh_number {
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_preproc {
+  color: #777777;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_symbol {
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_function {
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+pre.sh_sourceCode .sh_cbracket {
+  color: #F3E651;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_url {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_date {
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_time {
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_file {
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_ip {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_name {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_variable {
+  color: #ffffff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_oldfile {
+  color: #ffffff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_newfile {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_difflines {
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_selector {
+  color: #ffffff;
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_property {
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+}
+
+pre.sh_sourceCode .sh_value {
+  color: #bb00ff;
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+

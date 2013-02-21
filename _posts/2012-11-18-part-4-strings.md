@@ -27,8 +27,8 @@ Because the inner double quotes are prefixed with backslashes, they will not end
 
 When your program reads a line of input from the user, that line will be supplied to your program as a string. The function `putStr` has earned its name because it *put*s a *str*ing to the screen. You can either specify that string literally in the source code, as you did in the beginning, or you can specify a named string -- input from the user.
 
-String concatenation
---------------------
+Appending strings
+-----------------
 
 To familiarise yourself with strings, open up the interpreter without loading any program. Toying around in the interpreter without writing a program is a great way to test something quickly. Try typing in
 
@@ -41,17 +41,23 @@ and pressing return. The interpreter responds with a single string.
 
 When you type an expression in the interpreter, it will try to compute the value described by the expression and then display it back to you. In this case, the expression was computed to a single string, and it was printed back to you. The value that gets printed back to you is *not* something that would get printed if the expression was part of a normal program; it is only when you type expressions directly into <abbr>ghc</abbr>i that their results will be printed.
 
+> It is important to note the difference between what we are doing now and what we are doing when we say `putStrLn` something. Currently, we are simply computing things in <abbr>ghc</abbr>i, and <abbr>ghc</abbr>i is nice and shows us what the result is. When we do `putStrLn`, we are actually printing things in our program, and the things we are printing will appear regardless of whether we run the program in <abbr>ghc</abbr>i or on its own.
+>
+> When we are toying around with <abbr>ghc</abbr>i like this, nothing really gets printed, it just shows us what the result is.
+
 The previous expression constructed a single string from two strings. Just like you may use `+` to add two numbers in mathematics, Haskell uses `++` to add two strings together, end to end. The `++` operator is usually called the *list append* operator. To append two things means to put them together, end to end. I will refer to `++` as the *string* append operator, because that is what it does for us right now. And just like you can add several numbers together in mathematics, you can do the same with strings in Haskell.
 
     Prelude> "Hello, " ++ "world!" ++ " How " ++ "are you?"
     "Hello, world! How are you?"
 
-As a technical aside, you might be curious whether the string in the last example is computed left-to-right or right-to-left. Even though it doesn't matter to the result, it might be interesting to know that `++` works right-to-left. The string concatenation operator starts computing things from the right. If you want to change that behaviour, you can use parentheses, just like in maths. The following will compute left-to-right instead.
+As a technical aside, you might be curious whether the string in the last example is computed left-to-right or right-to-left. Even though it doesn't matter to the result, it might be interesting to know that `++` works right-to-left. The string append operator starts computing things from the right. If you want to change that behaviour, you can use parentheses, just like in maths. The following will compute left-to-right instead.
 
     Prelude> (("Hello, " ++ "world!") ++ " How ") ++ "are you?"
     "Hello, world! How are you?"
 
-Anything inside a pair of parentheses will be computed before anything else by Haskell. In this case, the result is the same, but if you would do something like `(4 + 3)*7` it would make a difference. Next, we will try out our newfound knowledge in a real program.
+Anything inside a pair of parentheses will be computed before anything else by Haskell. In this case, the result is the same, but if you would do something like `(4 + 3)*7` it would make a difference.
+
+Next, we will try out our newfound knowledge in a real program.
 
     module Main where
 
@@ -62,19 +68,19 @@ Anything inside a pair of parentheses will be computed before anything else by H
       putStrLn (beverage ++ " is an interesting choice.")
 <div class="label">Appending strings in action</div>
 
-This programs combines user input with appending strings, to avoid superfluous `putStr`s in the program. It is worth pointing out that the parentheses around the strings *are necessary* to show Haskell that you want to pass the whole concatenated string to `putStrLn`, and not just the first part of it. Generally, when you want one computation to be treated as a unit and want it computed before everything else, you might need to wrap it in parentheses.
+This programs combines user input with appending strings, to avoid superfluous `putStr`s in the program. It is worth pointing out that the parentheses around the strings *are necessary* to show Haskell that you want to pass the whole appended string to `putStrLn`, and not just the first part of it. Generally, when you want one computation to be treated as a unit and want it computed before everything else, you might need to wrap it in parentheses.
 
 The exchange with the user from this program will look something like the following
 
-    What do you prefer to drink?
-    Highland Park 12
-    Ah, so you like Highland Park 12.
-    Highland Park 12 is an interesting choice.
+<pre>What do you prefer to drink?
+Highland Park 12
+Ah, so you like Highland Park 12.
+Highland Park 12 is an interesting choice.</pre>
 
 
 
 Exercises
 ---------
 
- *  Modify the programs from the last two exercises of the previous chapter using string concatenation so that they become shorter.
+ *  Modify the programs from the last two exercises of the previous chapter by appending strings so that they become shorter.
 

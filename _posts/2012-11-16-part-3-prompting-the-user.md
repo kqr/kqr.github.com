@@ -95,21 +95,21 @@ Exercises
 
  *  Write a program that asks the user for their first name, last name, street address, postal code, postal town and then prints the answers formatted for writing on an envelope. Refer to the following for an example of the interaction with the user.
 
-        What is your first name?
-        Chris
-        And your last name?
-        Johnson
-        What is your street address?
-        Fisher street 12
-        May I have your postal code please?
-        198 47
-        And the postal town?
-        Clearborough
-        ----
-        On envelopes, write:
+    <pre>What is your first name?
+    Chris
+    And your last name?
+    Johnson
+    What is your street address?
+    Fisher street 12
+    May I have your postal code please?
+    198 47
+    And the postal town?
+    Clearborough
+    ----
+    On envelopes, write:
 
-        Chris Johnson
-        Fisher street 12
-        198 47 Clearborough
+    Chris Johnson
+    Fisher street 12
+    198 47 Clearborough</pre>
     <div class="label">An example interaction for the envelope address printer. You might want to change the questions into something that makes sense for your location.</div>
 

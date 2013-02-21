@@ -18,9 +18,9 @@ I keep calling the code we write "programs," and yet we haven't run them on thei
 
 To do so, instead of starting `ghci`, just run `ghc 〈haskell source file〉` in your console. The output may look something like the following.
 
-    $ ghc hello.hs
-    [1 of 1] Compiling Main             ( hello.hs, hello.o )
-    Linking hello ...
+<pre>$ ghc hello.hs
+[1 of 1] Compiling Main             ( hello.hs, hello.o )
+Linking hello ...</pre>
 
 And then you should have an executable program with the same name as your Haskell source file. It is that easy!
 
@@ -59,9 +59,9 @@ These little remarks are called "comments" in programming lingo. There are two w
       putStrLn "End of transmission."
 <div class="label">An example of a program with comments</div>
 
-All the lines starting with `--` will be completely ignored by Haskell. They are *only* there for the programmers to read. They are thrown out of the program when the computer reads it. These particular comments were perhaps not very useful, but it is a good habit to put comments in bits of the program that you find particularly tricky. Even if only you read your code, coming back to code without comments half a year later and trying to figure out what it does is sometimes a nightmare.
+All the lines starting with `--` will be completely ignored by Haskell. They are *only* there for the programmers to read. They are thrown out of the program when the computer reads it. These particular comments were perhaps not very useful, but it is a good habit to put comments in bits of the program that you find particularly tricky. Even if you are the only one who is reading your code, coming back to code without comments half a year later and trying to figure out what it does is sometimes a nightmare.
 
-I said there was another way to make comments. You can also start comments in Haskell with `{-` and then end them with `-}`. This is useful for making a comment only in a part of a line, or making a huge block comment.
+I said there was another way to make comments. You can also start comments in Haskell with `{-` and then end them with `-}`. This is useful for making a comment in the middle of a line, or making a huge block comment.
 
     module Main where
 

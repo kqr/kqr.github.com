@@ -79,8 +79,8 @@ article > blockquote {
     margin-left: 0px;
     margin-right: 0px;
     padding: 4px 12px 2px 12px;
-    background-color: #ffcccc;
-    border: 3px solid #ffaaaa;
+    background-color: #ffffcc;
+    border: 1px solid #cccc99;
 }
 
 article li {
@@ -90,35 +90,34 @@ article li {
 // makes ol look more like ul
 article ol > li { margin-left: 5px; }
 
-code {
+p > code, li > code {
     background: #f7f7f7;
     padding: 2px;
     border: 1px solid #cccccc;
-    font-family: monospace; // DO STUFF HERE MAN!
-}
-
-p > code {
+    font-family: monospace; /* DO STUFF HERE MAN! */
     font-size: 14px;
-}
-
-pre > code {
-    display: block;
-    font-size: 14px;
-    padding: 8px;
-    overflow: auto;
 }
 
 pre {
+    border: 0px;
+    display: block;
+    font-size: 14px;
+    padding: 12px;
+    overflow: auto;
+    line-height: 18px;
+    background-color: #272727;
+    color: #eedda0;
     margin-bottom: 0px;
 }
 
 div.label {
     background: #d7dfff;
-    color: #555555;
-    border: 1px solid #cccccc;
+    background: #373f3f;
+    color: #a7afcf;
     border-top: none;
     font-size: 12px;
-    padding: 2px;
+    padding: 5px;
+    padding-bottom: 6px;
     padding-left: 8px;
 }
 

@@ -15,14 +15,14 @@ Although the notion might seem strange to a new programmer, it is indeed common 
 Converting numbers to strings
 -----------------------------
 
-The arithmetic we know is useless if we can not employ it to perform something in a program. Let us start by printing a number to the user. As we know, a number can not immediately be displayed to the user. If we try to print a number, we will get an error message back. It will look something like this:
+The arithmetic we know is useless if we can not employ it to perform something in a program. Let us start by printing a number to the user. However, a number can not immediately be displayed to the user. If we try to print a number, we will get an error message back. It will look something like this:
 
-    Prelude> putStrLn 17
+<pre>Prelude&gt; putStrLn 17
 
-    <interactive>:2:10:
-        No instance for (Num String)
-          arising from the literal `17'
-    ...
+&lt;interactive&gt;:2:10:
+    No instance for (Num String)
+      arising from the literal `17'
+    ...</pre>
 <div class="label">The error message that ensues when we try to print a number</div>
 
 This is because `putStrLn` expects a *string*, but we're handing it a number. We need a way to turn the number into a string, and luckily, Haskell comes with a function to do precisely that. The function `show` converts the number `53` to the string `"53"`. Stay in the interpreter with me for just a minute more, and we will take `show` for a spin.
@@ -70,7 +70,7 @@ Just for the record, we can also pattern match on numbers, much like we did on s
 
 which will produce the output
 
-    Now, that's it!
+<pre>Now, that's it!</pre>
 
 
 Converting strings to numbers
@@ -80,11 +80,11 @@ If we instead want to receive numbers from the user, we encounter the opposite p
 
 If you try to use `read` in <abbr>ghc</abbr>i, you will encounter an error.
 
-    Prelude> read "43"
+<pre>Prelude&gt; read "43"
 
-    <interactive>:31:1:
-        Ambiguous type variable `a0' in the constraint:
-          (Read a0) arising from a use of `read'
+&lt;interactive&gt;:31:1:
+    Ambiguous type variable `a0' in the constraint:
+      (Read a0) arising from a use of `read'</pre>
 <div class="label">Ambiguous type variable! Haskell doesn't know what you want to convert "43" <em>to</em>.</div>
 
 The problem is that read doesn't only convert from strings to numbers -- it converts from strings to a lot of different kinds of values. Haskell simply doesn't know what you want to convert *to*. If you use the value in a computation later on, this usually doesn't become a problem, because Haskell can figure out what you want to convert it to based on how you use it. For example, if we try to use `floor` on the value we get out, it looks like the following.
@@ -111,9 +111,9 @@ We could use `read`, for example, to pattern match against a number the user ent
 
 Interaction with this program might look something like the following.
 
-    Please enter the current hour.
-    16
-    You'll be getting off of work soon!
+<pre>Please enter the current hour.
+16
+You'll be getting off of work soon!</pre>
 
 In this case, `read` works because Haskell sees that the patterns you are trying to match against are numbers, so it assumes you want to convert `hour` to a number.
 
@@ -147,11 +147,11 @@ Invalid input
 
 One thing you might have noticed is that the program in the last example crashes if the user tries to enter something that is not a number. Try entering "fish" as the hour. The interpreter will respond with the cryptic error message
 
-    *** Exception: Prelude.read: no parse
+<pre>*** Exception: Prelude.read: no parse</pre>
 
-which simply means, "I couldn't parse `"fish"` into a number and I'm really confused now and I don't know what to do. I'll just blow myself up."
+which simply means, "I couldn't parse `"fish"` into a number and I'm really confused now and I don't know what to do. I'll just blow myself up." There are different ideas on how to handle errors like this, and nobody knows which way is right.
 
-There are different ideas on how to handle errors like this, and nobody knows which way is right. Regardless of how you choose to handle errors, the important thing is to **never ever sweep errors under the rug**. It is very common for new programmers to suppress any errors they get but do not understand. This is very dangerous, because it means your program contains a real error and you no longer have any way of knowing which. Only handle errors you know how to handle and let the rest crash your program. Make sure you understand all the errors you get. Ask someone if you need to.
+> Regardless of how you choose to handle errors, the important thing is to **never ever sweep errors under the rug**. It is very common for new programmers to suppress any errors they get but do not understand. This is very dangerous, because it means your program contains a real error and you no longer have any way of knowing which. Only handle errors you know how to handle and let the rest crash your program. Make sure you understand all the errors you get. Ask someone if you need to.
 
 The traditional approach to handling errors is to write lots of error-handling code around areas that can fail, and make sure as few failures as possible can escape all that error-handling code. Another approach, called *fail-fast*, is to only write code for the correct input, and let the program blow up for invalid inputs. Or at least let parts of the program blow up, and have other parts restart the parts that just blew up.
 
@@ -232,35 +232,46 @@ Exercises
 
     While this might seem like a useless exercise, it is there to train you in thinking critically about data and realising the differences small things make. It should also be a relatively easy exercise if you have spent enough time playing with the things you have learned so far.
 
+ *  Make a program that asks the user for their age, and make it tell them when they were born, given that the current year is whatever is the current year when you wrote the program. For example, if I wrote this program now, it would say something like
+
+    <pre>How old are you?
+    23
+
+    Ah! You were born in 1989!</pre>
+    <div class="label">This program was evidently written during 2012, but works as intended, at least!</div>
+
+ *  Make a program similar to the one in the previous exercise, but make it so it asks what year it is in addition to when the user was born. Use both pieces of data to calculate how old the user is. Interaction could look like the following.
+
+    <pre>What year is it?
+    2013
+    How old are you?
+    23
+
+    Ah! Then you must have been born in 1990!</pre>
+    <div class="label">It doesn't really matter when this program was written, but it's used during 2013.</div>
+
  *  Create a simple calculator program. Make the program ask the user if they want to add, subtract or multiply, and then ask them for numbers and show them the result. Interaction with the program could look like the following.
 
-        Do you want to (a)dd, (s)ubtract or (m)ultiply?
-        m
-        Enter the first number.
-        3
-        Enter the second number.
-        4
-        The result is 12
+    <pre>Do you want to (a)dd, (s)ubtract or (m)ultiply?
+    m
+    Enter the first number.
+    3
+    Enter the second number.
+    4
+    The result is 12</pre>
     <div class="label">Example interaction with a simple calculator.</div>
 
     Or, if the user chooses to add,
 
-        Do you want to (a)dd, (s)ubtract or (m)ultiply?
-        a
-        Enter the first number.
-        2
-        Enter the second number.
-        9
-        The result is 11
+    <pre>Do you want to (a)dd, (s)ubtract or (m)ultiply?
+    a
+    Enter the first number.
+    2
+    Enter the second number.
+    9
+    The result is 11</pre>
     <div class="label">Example interaction with a simple calculator.</div>
 
     Concentrate on which values are strings and which are numbers to get this one right. You will first have to convert the strings from the user into numbers, then add those two numbers, before converting the result back to a string to print to the user!
 
- *  Make a program that asks the user for their age, and make it tell them when they were born, given that the current year is whatever is the current year when you wrote the program. For example, if I wrote this program now, it would say something like
-
-        How old are you?
-        23
-
-        Ah! You were born in 1989!
-    <div class="label">This program was evidently written during 2012, but works as intended, at least!</div>
 

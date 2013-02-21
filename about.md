@@ -54,10 +54,12 @@ The exercises are listed roughly in order of difficulty, but there's no point in
 
 I do not believe in answer sheets, and therefore I have not provided any solutions for the exercises. If you get stuck on a particular problem, you may of course contact me by e-mail with your questions. If a problem is ambiguously stated or incorrect, you should either file an error report with the link in the footer or contact me by e-mail.
 
+To give the code its colour, [I use SHJS with the language file by Nicolas Wu](http://zenzike.com/posts/2010-10-14-highlighting-haskell-with-shjs). The colour theme is pretty much the same as the one I use for myself, and with a little HTML knowledge, you can extract it from [the CSS file I use](/assets/themes//hsp/css/sh_kqrless.css).
+
 
 License (CC BY-SA)
 ------------------
 Content on this site is licensed under a [Creative Commons Attribution-ShareAlike 3.0 license](http://creativecommons.org/licenses/by-sa/3.0/). For more information about Creative Commons, check out [their web page](http://creativecommons.org/).
 
-Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor is under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](http://creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution. 
+Unless otherwise explicitly stated, any contribution submitted for inclusion in this book by you to the licensor is under the terms and conditions of the [Creative Commons Attribution-ShareAlike 3.0 license](http://creativecommons.org/licenses/by-sa/3.0/), without any additional terms or conditions. All external contributions will be attributed below. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with the licensor regarding your contribution.
 

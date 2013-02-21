@@ -13,7 +13,7 @@ So far, we have only been able to use pattern matching to do exact comparisons. 
 
 Boolean values
 -------------
-We have already seen numbers and strings, both of which are two different kinds of values. There is a third kind of value, the *boolean* values. Numbers indicate some kind of quantity, strings indicate sequences of letters, and boolean values indicate truth or falsehood about something. There are only two boolean values and in Haskell we call them `True` and `False`.
+We have already seen numbers and strings, both of which are two different kinds of values. There is a third kind of value, the *boolean* values. Numbers indicate some kind of quantity, strings indicate sequences of letters, and boolean values indicate truth or falsehood about something. There are only two boolean values, and in Haskell we call them `True` and `False`.
 
 Just like there are functions that work with strings and numbers, there are functions that work with boolean values. But first, we will need to learn why boolean values are useful!
 
@@ -40,24 +40,24 @@ If we experiment a little further, we will find that the equality operator also 
 
 However, it does not work to compare a string to a number.
 
-    Prelude> "3" == 3
+<pre>Prelude&gt; "3" == 3
 
-    <interactive>:9:8:
-        No instance for (Num [Char])
-          arising from the literal `3'
-    ...
+&lt;interactive&gt;:9:8:
+    No instance for (Num [Char])
+      arising from the literal `3'
+    ...</pre>
 <div class="label">An error that occurs when you try to compare a number to a string... or a string to a number... or whichever way around it is.</div>
 
 The same problem will arise if you try to compare something which is explicitly an integer to a fractional number, say by trying something like
 
-    Prelude> (floor 3.14) > 2.2
+<pre>Prelude&gt; (floor 3.14) &gt; 2.2
 
-    <interactive>:25:16:
-        Ambiguous type variable `a0' in the constraints:
-          (Fractional a0)
-            arising from the literal `2.2' at <interactive>:25:16-18
-          (Integral a0) arising from a use of `floor' at <interactive>:25:2-6
-          (Ord a0) arising from a use of `>' at <interactive>:25:14
+&lt;interactive&gt;:25:16:
+    Ambiguous type variable `a0' in the constraints:
+      (Fractional a0)
+        arising from the literal `2.2' at &lt;interactive&gt;:25:16-18
+      (Integral a0) arising from a use of `floor' at &lt;interactive&gt;:25:2-6
+      (Ord a0) arising from a use of `&gt;' at &lt;interactive&gt;:25:14</pre>
 
 We will therefore have to keep in mind that it seems like you can compare any values, but they have to be the same kind of values. Only compare numbers with numbers; only compare strings with strings; only compare boolean values wit...
 
@@ -185,12 +185,12 @@ Exercises
 
  *  Use pattern matching to write a program that asks the user for their age, and output remarks for some kind of age milestones. The interaction with the user might look like
 
-        How old are you?
-        34
-        You probably knew how to read when you were 10
-        You were probably allowed to drive when you were 18
-        You probably had worked by 28
-        You've passed 30!
+    <pre>How old are you?
+    34
+    You probably knew how to read when you were 10
+    You were probably allowed to drive when you were 18
+    You probably had worked by 28
+    You've passed 30!</pre>
 
     Hint: You can chain several `case` expressions after each other, as long as you line them up horizontally.
 
