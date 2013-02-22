@@ -15,11 +15,13 @@ Although the notion might seem strange to a new programmer, it is indeed common 
 Converting numbers to strings
 -----------------------------
 
-The arithmetic we know is useless if we can not employ it to perform something in a program. Let us start by printing a number to the user. However, a number can not immediately be displayed to the user. If we try to print a number, we will get an error message back. It will look something like this:
+The arithmetic we know is useless if we can not employ it to perform something in a program. Let us start by printing a number to the user. However, a number can not immediately be displayed to the user. If we try to print a number, we will get an error message back. If we try to
 
-<pre>Prelude&gt; putStrLn 17
+    Prelude> putStrLn 17
 
-&lt;interactive&gt;:2:10:
+it will look something like this:
+
+<pre>&lt;interactive&gt;:2:10:
     No instance for (Num String)
       arising from the literal `17'
     ...</pre>
@@ -72,21 +74,50 @@ Converting strings to numbers
 
 If we instead want to receive numbers from the user, we encounter the opposite problem! The user will be entering a string, but we want it to be a number. Remember that strings and numbers are entirely different things, as far as Haskell cares. (And this is indeed true for almost every programming language.) What we need is some kind of "reverse `show`," that will take a string and give us back a number. Fortunately for us, there exists such a function. It is called `read`.
 
-If you try to use `read` in <abbr>ghc</abbr>i, you will encounter an error.
+If you try to use `read` in <abbr>ghc</abbr>i, like so:
 
-<pre>Prelude&gt; read "43"
+    Prelude> read "43"
 
-&lt;interactive&gt;:31:1:
+you will encounter an error.
+
+<pre>&lt;interactive&gt;:31:1:
     Ambiguous type variable `a0' in the constraint:
       (Read a0) arising from a use of `read'</pre>
 <div class="label">Ambiguous type variable! Haskell doesn't know what you want to convert "43" <em>to</em>.</div>
 
-The problem is that read doesn't only convert from strings to numbers -- it converts from strings to a lot of different kinds of values. Haskell simply doesn't know what you want to convert *to*. If you use the value in a computation later on, this usually doesn't become a problem, because Haskell can figure out what you want to convert it to based on how you use it. For example, if we try to use `floor` on the value we get out, it looks like the following.
+The problem is that `read` doesn't only convert from strings to numbers -- it converts from strings to a lot of different kinds of values. Haskell simply doesn't know what you want to convert *to*. If you use the value in a computation later on, this usually doesn't become a problem, because Haskell can figure out what you want to convert it to based on how you use it. For example, if we try to use `floor` on the value we get out, it looks like the following.
 
     Prelude> floor (read "3.1415926")
     3
 
-This time around, Haskell knows that you want to convert `"3.1415926"` to a number, because `floor` in turn expects numbers. This is one of the magic things Haskell does that not all languages can do. (Remember, things in parentheses are computed first, so this is completely okay to write. When the computer computes it, it goes from `floor (read "3.1415926")` to `floor 3.1415926` to just `3`.)
+This time around, Haskell knows that you want to convert `"3.1415926"` to a number, because `floor` in turn expects numbers. This is one of the magic things Haskell does that not all languages can do.
+
+Remember, things in parentheses are computed first, so this is completely okay to write. When the computer computes it, it goes from one to the other of the three following stages.
+
+    floor (read "3.1415926")
+
+    floor 3.1415926
+
+    3
+
+Similarly, we could try to
+
+    Prelude> read "1.414213" + 1.618
+    3.032213
+
+We don't need parentheses here, since `read "1.414213"` gets computed before the addition, anyway. This goes through the three stages
+
+    read "1.414213" + 1.618
+
+    1.414213 + 1.618
+
+    3.032213
+
+The beauty in this is that Haskell knows that you want to convert the string to a number since you treat the value like a number.
+
+
+Pattern matching on user input numbers
+--------------------------------
 
 We could use `read`, for example, to pattern match against a number the user enters.
 
