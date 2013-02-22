@@ -50,12 +50,9 @@ The previous expression constructed a single string from two strings. Just like 
     Prelude> "Hello, " ++ "world!" ++ " How " ++ "are you?"
     "Hello, world! How are you?"
 
-As a technical aside, you might be curious whether the string in the last example is computed left-to-right or right-to-left. Even though it doesn't matter to the result, it might be interesting to know that `++` works right-to-left. The string append operator starts computing things from the right. If you want to change that behaviour, you can use parentheses, just like in maths. The following will compute left-to-right instead.
 
-    Prelude> (("Hello, " ++ "world!") ++ " How ") ++ "are you?"
-    "Hello, world! How are you?"
-
-Anything inside a pair of parentheses will be computed before anything else by Haskell. In this case, the result is the same, but if you would do something like `(4 + 3)*7` it would make a difference.
+Appending strings in a real program
+-----------------------------------
 
 Next, we will try out our newfound knowledge in a real program.
 
@@ -82,5 +79,5 @@ Highland Park 12 is an interesting choice.</pre>
 Exercises
 ---------
 
- *  Modify the programs from the last two exercises of the previous chapter by appending strings so that they become shorter.
+ *  Modify the programs from the last two exercises of the previous chapter by appending strings so that they become shorter. Remember to put parentheses around the things you want to print, so that Haskell knows you want to print the entire thing and not just the first bit.
 

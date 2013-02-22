@@ -75,7 +75,7 @@ article p {
     margin-bottom: 18px;
 }
 
-article > blockquote {
+article blockquote {
     margin-left: 0px;
     margin-right: 0px;
     padding: 4px 12px 2px 12px;

@@ -92,7 +92,7 @@ The purpose of the inequality operator is to do the exact opposite thing of the 
 
 If you are coming from other programming languages, you might find the `/=` symbol chosen for Haskell a bit odd. The reason for choosing this symbol, of course, is that it resembles the mathematical symbol &#8800; that is used for the same purpose.
 
-As an historical aside, I can mention that many of the design decisions about Haskell are rooted in mathematics. This is because many problems of programming have already been solved in mathematics for a few decades at least, and while mainstream languages are slow to realise this, Haskell developers are not. Do not let this put you off; despite what ignorant people say, Haskell is a highly practical language, and you don't need to know a single bit about the mathematical influences to be a proficient Haskell programmer.
+> As an historical aside, I can mention that many of the design decisions about Haskell are rooted in mathematics. This is because many problems of programming have already been solved in mathematics for a few decades at least, and while mainstream languages are slow to realise this, Haskell developers are not. Do not let this put you off; despite what ignorant people say, Haskell is a highly practical language, and you don't need to know a single bit about the mathematical influences to be a proficient Haskell programmer.
 
 
 
@@ -194,4 +194,4 @@ Exercises
 
     Hint: You can chain several `case` expressions after each other, as long as you line them up horizontally.
 
-    You might be tempted to do something like `real_age <- read age` to avoid having to type `read age` all the time. Try to fight the temptation. In the next chapter, you will get to know why it doesn't work, and you can improve your program then.
+    > You might be tempted to do something like `real_age <- read age` to avoid having to type `read age` all the time. Try to fight the temptation. In the next chapter, you will get to know why it doesn't work, and you can improve your program then.

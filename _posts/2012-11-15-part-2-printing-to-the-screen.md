@@ -46,7 +46,7 @@ When the "Hello, world" program is done, it will return you to the interpreter c
 
 If you get any error messages, go back and check your file for misspellings. An exact reproduction of the file should not cause any errors. If it still doesn't seem to work, find a Haskell community, show them your code and error messages, and ask them what is wrong with your code.
 
-Even if you *don't* get any error messages, I would recommend you try removing parts of the program at random to see what kind of error messages you get. Take a note of them, because if you know what an error message means you will save yourself a lot of frustration when you get the same error message but don't know what you did wrong.
+> Even if you *don't* get any error messages, I would recommend you try removing parts of the program at random to see what kind of error messages you get. Take a note of them, because if you know what an error message means you will save yourself a lot of frustration when you get the same error message but don't know what you did wrong.
 
 
 The "Hello, world" program
@@ -74,7 +74,7 @@ Sometimes you know how this computation is performed, and sometimes you do not. 
 
 In this case, you define the `main` function. *Defining* a function means to state what computation the function is supposed to perform. It is, in essence, "designing the internals of the black box." When a Haskell program is run, it will try to perform the computation defined by the `main` function. The `main` function may in turn try to perform the computations of other functions, but the only function that is *guaranteed* to be computed as soon as you run the program is the `main` function.
 
-Note that Haskell is case sensitive, and as such, it does not treat `main` and `Main` as the same thing, and neither of them are the same names as `MAIN` or `mAiN`. So far, I have introduced two *different* names, which do *not* refer to the same thing. `Main` is the name of a module, whereas `main` is the name of a function.
+> Note that Haskell is case sensitive, and as such, it does not treat `main` and `Main` as the same thing, and neither of them are the same names as `MAIN` or `mAiN`. So far, I have introduced two *different* names, which do *not* refer to the same thing. `Main` is the name of a module, whereas `main` is the name of a function.
 
 The general form of a function definition is
 

@@ -14,17 +14,25 @@ This chapter and the next is a little different. There will not be much code, bu
 Side effects and purity
 -----------------------
 
-I would like to elaborate briefly on so-called "side effects." An expression like `14 + 7` is very clean in the sense that it only computes a value and does nothing else. Every time you compute `14 + 7` you can be certain that the same, reliable thing will happen. This is what is called a "pure" expression. Any expression that only computes a value and does nothing else is a pure expression.
+I would like to elaborate briefly on so-called "side effects." An expression like `14 + 7` is very clean in the sense that it only computes a value and does nothing else. Every time you compute `14 + 7` you can be certain that the same, reliable thing will happen. This is what is called a "pure" expression. Any expression that only computes a value and does nothing else is a *pure expression*.
 
-There is another kind of expression though, and you have used it a lot. Remember that `putStr "hello"` is also an expression? It does compute a value (a value we still are not going to care for) but it also produces text on the screen. The result, as far as the user is concerned, is different each time it is computed. The first time the result will be the text "hello" on the screen. The second time around, the result will be "hellohello" on the screen. This kind of expression is called "impure" and we say that it has "side effects."
+There is another kind of expression though, and you have used it a lot. Remember that `putStr "hello"` is also an expression? It does compute a value (a value we still are not going to care for) but it also produces text on the screen. The result, as far as the user is concerned, is different each time it is computed. The first time the result will be the text
 
-Try to remember that there is a distinction in Haskell between "pure" expressions, that simply compute a value, and expressions with "side effects," that can change the world in some way. All I/O computations have side effects.
+<pre>hello</pre>
 
-A `putStr` computation is still a fairly predictable expression. One that is a lot worse is `getLine`. If your program is not run by a very simple-minded user, the line of text you get from the user will be different almost every time `getLine` is computed. Contrast this to something like `4 + 7` where the result will be the same all the time. Haskell sees expressions that generate different things each time they are run as something bad, and strives to isolate the unpredictable parts of a program as much as possible. This is why someone coming from other programming languages might think that `getLine` behaves a little different from what they are used to.
+visible on the screen. The second time around, the result will be
 
-`getLine` does compute a value that is complete gibberish to us, just like `putStr`. We are not interested in the value that `getLine` computes, we are only interested in the line of user input that happened as a side effect. The line of user input is not a calculated value but a string originating from the keyboard or another input source.
+<pre>hellohello</pre>
 
-To get the user input from `getLine`, we need to bind a name to it with the left arrow (`<-`.) We *must* do that to be able to use the line the user typed. If we do not do that, the line the user typed will be thrown into cyberspace and we are left with an unusable gibberish value from `getLine`.
+on the screen. We notice that while we did the exact same computation twice, the result was different each time. This kind of expression is called "impure" and we say that it has "side effects."
+
+Try to remember that there is a distinction in Haskell between "pure" expressions, that simply compute a value, and expressions with "side effects," that can change the world in some way. All I/O computations are expressions, but they have side effects.
+
+A `putStr` computation is still a fairly predictable expression. One that is a lot worse is `getLine`. If your program is not run by a very simple-minded user, the line of text you get from the user will be different every time `getLine` is computed. Contrast this to something like `4 + 7` where the result will be the same all the time. Haskell sees expressions that generate different things each time they are run as something bad, and strives to isolate the unpredictable parts of a program as much as possible. This is why someone coming from other programming languages might think that `getLine` behaves a little different from what they are used to.
+
+`getLine` does compute a value that is complete gibberish to us, just like `putStr`. We are not interested in the value that `getLine` computes, we are only interested in the line of user input that happened as a *side effect*. The line of user input is not a computed value but a string originating from the keyboard or another input source.
+
+To get the user input from `getLine`, we need to bind a name to it with the left arrow (`<-`.) We *must* do that to be able to access the line the user typed. If we do not do that, the line the user typed will be thrown into cyberspace and we are left with an unusable gibberish value from `getLine`.
 
 This way of comparing two input strings is correct.
 
@@ -44,7 +52,7 @@ The following way of comparing two input strings is correct from a computer gram
       case getLine == getLine of
          ...
 
-The problem that the interpreter screams at you for is that it doesn't make sense to compare the gibberish values that `getLine` computes. However, it does make sense to compare the lines of user input, and those have to be extracted by binding a name to them.
+The problem that the interpreter screams at you for is that it doesn't make sense to compare the gibberish values that `getLine` computes. However, it does make sense to compare the lines of user input, and those have to be extracted by binding a name to them with `<-`.
 
 
 
@@ -63,7 +71,9 @@ The difference between pure and impure expressions is also why the following cod
 
       putStrLn ("Half the number is " ++ show half ++ "!")
 
-The reason is that you can *only* use `<-` to get information from I/O computations (which have side effects). The left arrow `<-` is for extracting the side effect part of an I/O computation. If you want to create a name (a variable -- names for values are called variables, even though they never vary) for a pure value, there is another way to write it. The following is okay *inside of a do construction*.
+The reason is that you can *only* use `<-` to get information from I/O computations (which have side effects). The left arrow `<-` is for extracting the side effect part of an I/O computation. If you want to create a name for a pure value, there is another way to write it. The following is okay *inside of a do construction*.
+
+> By the way, giving a name to a value is called "creating a variable." *Variables* are simply names for values. It's strange that they are called variables, since they never vary, but that's what everyone else calls them, so I'm going to start using that word too. If you know "a variable" means "a name for a value" you'll have no problem keeping up.
 
     module Main where
 

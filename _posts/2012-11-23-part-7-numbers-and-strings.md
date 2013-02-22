@@ -122,7 +122,7 @@ If we want to do nothing for any other hour than 11, 16 and 22 in the previous e
       _  -> return ()
 <div class="label">Doing nothing for a certain pattern</div>
 
-If you are coming from other programming languages, keep in mind that `return` *does not mean the same thing in Haskell as it does in other languages*. I can not stress this enough. Try not to have any presumptions on how things work in Haskell while learning it. It will be difficult adjusting to the Haskell mindset, but it will be worth it for the enlightening experience when you finally can say, "Ohh, I *get it*." It will change your perspective on programming forever.
+> If you are coming from other programming languages, keep in mind that `return` *does not mean the same thing in Haskell as it does in other languages*. I can not stress this enough. Try not to have any presumptions on how things work in Haskell while learning it. It will be difficult adjusting to the Haskell mindset, but it will be worth it for the enlightening experience when you finally can say, "Ohh, I *get it*." It will change your perspective on programming forever.
 
 You can verify for yourself that `return ()` does nothing with the following simple snippet.
 
@@ -133,7 +133,9 @@ You can verify for yourself that `return ()` does nothing with the following sim
       return ()
       putStrLn "Do you get this message too?"
 
-As you can see from the output, `return ()` really does mean "do nothing" and nothing else.
+As you can see from the output, `return ()` really is an I/O computation that means "do nothing."
+
+If you want to, you can view `return ()` much like you would `putStr ""`. Both are invisible to the user of your program, but `return ()` is preferred simply because it doesn't imply that there is anywhere to print text.
 
 
 Invalid input

@@ -83,7 +83,7 @@ Reading more than one line of input from the user is just as simple.
 
 This program asks for both the users name and their age. Every line of input needs a unique name bound to it; once again, when programming Haskell, we dislike ambiguity. This means that you can not use the same name for different lines of input from the user.
 
-While it may be tempting to try to print several things at once with `putStrLn`, you will find it difficult if you try. `putStr` and `putStrLn` are both designed to print only one thing each, and in the next chapter, we will begin investigating how we may mitigate that.
+> While it may be tempting to try to print several things at once with `putStrLn`, you will find it difficult if you try. `putStr` and `putStrLn` are both designed to print only one thing each, and in the next chapter, we will begin investigating how we may mitigate that.
 
 
 
