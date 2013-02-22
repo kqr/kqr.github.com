@@ -92,7 +92,7 @@ You may of course mix different arithmetic operators to compute more complex exp
 > 3. Multiplication and division
 > 4. Addition and subtraction
 >
-> you'll be fine.
+> you'll be fine. That's the order in which things are computed.
 
 
 Fractional numbers
@@ -131,6 +131,104 @@ There is a funny story about a snarky doctor with his patient, and it goes somet
 > The technical reason for why it behaves like that is that you cannot use `/` for division with integers in Haskell, only fractional numbers. Something like `18` will automatically get converted to the fractional number `18.0`, but if you type `floor 18`, Haskell will see that you explicitly mean 18 as an integer, and therefore it will refuse converting and the division will fail.
 
 
+More math functions
+-------------------
+
+To get it out of the way, here are a few other math functions you may be interested in.
+
+Computing the power of one number to another is done via the `**` (double asterisk) operator in Haskell. You may for example calculate two to the seventh with
+
+    Prelude> 2**7
+    128.0
+
+This also works for non-integers and negative numbers. Don't forget the parentheses around negative numbers!
+
+    Prelude> 3.14**0.5
+    1.772004514666935
+    Prelude> (-1.5)**(-4)
+    0.19753086419753085
+
+There are two other operators that compute powers, but they are not as general as this one. I mention them for completeness' sake, but I recommend you stick with this one. The other two are `^^` (double caret) which only works with integers in the exponent, and `^` (caret) which only works with positive integers in the exponent.
+
+If you want to find the absolute value of a number, i.e. its size without regards for whether it's positive or negative, you can use the `abs` function. Basically, if you give the `abs` function a positive number, it will give you the same number right back. If you give it a negative number, it will give you a positive number back.
+
+    Prelude> abs 37
+    37
+    Prelude> abs (-29)
+    29
+
+> If you have not caught on by now, you put things into functions by writing
+>
+>     〈function name〉 〈thing you want to put into function〉
+>
+> which is simply the function name followed by the thing you want to put into the function, separated by a space. The thing you want to put into a function is called *a function argument*. The act of putting something into a function to receive a computed value is called *evaluating* a function. Evaluating is really just a fancy word for computing.
+>
+> Anything on this form is an expression. `abs (-29)` is an expression that describes the value `29`. In other words, every function call is an expression.
+
+The `abs` function is great if you don't care for whether or not the number is positive or negative. On the other hand, if that is the *only* thing you care about, you might like the `signum` function. `signum` equals `1` for positive numbers, and `-1` for negative numbers.
+
+    Prelude> signum 4
+    1
+    Prelude> signum (-3)
+    -1
+
+You might guess what the `sqrt` function does -- it computes the square root of a number.
+
+    Prelude> sqrt 16
+    4.0
+    Prelude> sqrt 27
+    5.196152422706632
+
+To find the maximum or minimum of two numbers, you can use the functions `max` or `min`. They take as arguments *two* numbers, and equals the larger and smaller of them, respectively. They may be used like this.
+
+    Prelude> max 3 7
+    7
+    Prelude> min 9 12
+    9
+    Prelude> max (-2) 0
+    0
+
+If you need to find the largest of several numbers, you'll need to be clever and take out that programming brain of yours. For example, to find the largest of the four numbers 8, 3, 12 and 5, we need to first find the largest number of 8 and 3.
+
+    Prelude> max 8 3
+    8
+
+Then we can use that information to find the largest of 8, 3 and 12.
+
+    Prelude> max (max 8 3) 12
+    12
+
+Do you see how this works? It compares 12 to the largest number of 8 and 3, so in effect, the whole expression will equal the largest number of 8, 3 and 12. We can figure this out on our own by replacing expressions with the values they describe:
+
+    max (max 8 3) 12
+
+is equal to
+
+    max 8 12
+
+which is equal to
+
+    12
+
+Then, to find the largest of all four numbers, we just continue using this trick.
+
+    Prelude> max (max (max 8 3) 12) 5
+    12
+
+You can work this one out for yourself with the replacement trick, if you still don't really understand how it works.
+
+Finally, there are the (in)famous trigonometric functions. If you need to find out the sine, cosine or tangent of a number, Haskell saves your day! As you can see, the trigonometric functions in Haskell work with angles measured in radians and not degrees.
+
+    Prelude> sin 1.39
+    0.9837008148112766
+    Prelude> cos 0.56
+    0.8472551110134161
+    Prelude> tan 1.57
+    1255.7655915007897
+
+There are more functions that work with numbers, and I've only skimmed the surface of what's there, but these should last you long.
+
+
 Exercises
 ---------
 
@@ -157,3 +255,17 @@ Naturally, you can verify your answers for yourself by writing short Haskell pro
      *  `round 3.6 / 0.2`
      *  `4 * -3 + 12`
      *  `ceiling 5.29 / 9 * -1`
+
+ *  The `cos` function has a really cool property. If you repeatedly take the cosine of a number, you get closer and closer to a fixed number *x*, regardless of which number you started with.
+
+        Prelude> cos 1.2
+        0.3623
+        Prelude> cos 0.3623
+        0.9350
+        Prelude> cos 0.9350
+        0.5938
+        Prelude> cos 0.5938
+        0.8288
+    <div class="label">Getting closer and closer to a fixed number.</div>
+
+    Can you figure out approximately what the mysterious number *x* is? Can you figure out what it is with only a single calculation? Hint: You can use parentheses like we did with `max` to combine several cosine computations into one calculation.

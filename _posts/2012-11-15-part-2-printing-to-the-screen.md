@@ -82,6 +82,10 @@ The general form of a function definition is
 
 An *expression* is a description of a *single* value to compute. For example, `4 + 5` is an expression that describes the sum of four and five and it will compute the value `9`. Similarly, `square 3` is an expression that describes the square of three, and will also compute the value `9`. `reverse "hello"` is an expression that describes the word "hello" reversed, and it will compute the value `"olleh"`.
 
+> The concept of an expression is *really* important for programming, so try to understand what it means. An expression is a description of a value. There are a lot of different expressions and they may look very dissimilar, but they have in common that they all compute a value.
+>
+> *Anything* that is an expression, can be used *anywhere* in the code where an expression is expected.
+
 You might react to the fact that our `main` function does not seem to compute any value; it just prints text to the screen! The observation is partly correct. While `putStrLn` does not compute a value that means anything to us, it actually computes a value, too. *Every* expression in Haskell computes a value. Since the value doesn't mean anything to us in this case, it is cleverly hidden by <abbr>ghc</abbr>i so as to not clutter our screen.
 
 The `=` (equals sign) is meant to communicate that computing the value of the function *is the same thing as* computing the value of the expression. In our case, computing the `main` function is the same thing as computing the expression
@@ -105,7 +109,16 @@ Save the following code in a file and load it in the interpreter. As with before
 
 You will notice two changes from the previous program. The most important one is the new `do` construction. The `do` construction starts a sequence of I/O computations. You did not need the `do` construction in the previous program because you only performed *one* I/O computation. That makes sense, because as you have learned, every expression computes a single value, and you can't say that that computing the `main` function is the same thing as computing *two* expressions. You would simply not know what value `main` should equate to. It could be either! When programming Haskell, we dislike ambiguity.
 
-The `do` construction makes a *single* expression out of *many* I/O computations. Technical aside: It does this by performing all I/O computations, but then throwing away all the intermediary computed values and keeping only the value of the last computation. Of course, since we do not care for the computed values right now, it does not matter to us which value is kept, only that the main function equates to a single value so the code will run.
+The `do` construction makes a *single* expression out of *many* I/O computations. The general form of the do construction is
+
+    do
+      〈I/O computation 1〉
+      〈I/O computation 2〉
+      〈I/O computation 3〉
+      ...
+      〈I/O computation n〉
+
+> Technical aside: The `do` construction works by performing all I/O computations, but then throwing away all the intermediary computed values and keeping only the value of the last computation. Of course, since we do not care for the computed values right now, it does not matter to us which value is kept, only that the main function equates to a single value so the code will run.
 
 Pay attention to where the second `putStrLn` is placed: I/O computations need to be aligned horizontally with each other, to let Haskell know that they are part of the same sequence. They are also *indented* slightly more than the surrounding code to show Haskell that they belong to the `do` construct on the line above.
 

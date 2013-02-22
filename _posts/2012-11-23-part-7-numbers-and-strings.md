@@ -34,12 +34,6 @@ This is because `putStrLn` expects a *string*, but we're handing it a number. We
 
 The function `show` is very similar to `putStrLn` or `floor`, but instead of printing things or converting numbers to other numbers, it converts numbers to strings. (In fact, `show` can convert pretty much anything to a string.)
 
-If you have not caught on by now, you put things into functions by writing
-
-    〈function name〉 〈thing you want to put into function〉
-
-which is simply the function name followed by the thing you want to put into the function, separated by a space. The thing you want to put into a function is called *a function argument*. The act of putting something into a function to receive a computed value is called *evaluating* a function. Evaluating is really just a fancy word for computing.
-
 
 Using numbers in a program
 --------------------------
