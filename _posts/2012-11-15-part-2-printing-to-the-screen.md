@@ -29,12 +29,12 @@ The traditional introduction to any programming language is the "Hello, world" p
     main = putStrLn "Hello, world!"
 <div class="label">The "Hello, world" program in Haskell</div>
 
-Name the file something like `hello_world.hs`. Haskell source code traditionally uses the `.hs` file extension. To run this code, you need to open up `GHCi` in the same directory as the file you just saved, and then in the interpreter, type `:load hello_world.hs`. This will load your code into the interpreter and prepare it for running. When it comes back to the prompt, just type `main` and press return to start your first program. The exchange will look something like this:
+Name the file something like `hello_world.hs`. Haskell source code traditionally uses the `.hs` file extension. To run this code, you need to open up `GHCi` in the same directory as the file you just saved, and then in the interpreter, type `:load hello_world.hs`. This will load your code into the interpreter and prepare it for running. When it comes back to the prompt, just type `:main` and press return to start your first program. The exchange will look something like this:
 
 <pre>Prelude&gt; :load hello_world.hs
 [1 of 1] Compiling Main             ( hello_world.hs, interpreted )
 Ok, modules loaded: Main.
-*Main&gt; main
+*Main&gt; :main
 Hello, world!</pre>
 <div class="label">Loading the "Hello, world" program into GHCi</div>
 

@@ -26,6 +26,8 @@ And then you should have an executable program with the same name as your Haskel
 
 The reason I choose to work in <abbr>ghc</abbr>i is that it makes it really convenient to experiment with expressions and values as I am programming. Contrary to popular belief, I don't know everything. A lot of things I figure out by playing around with <abbr>ghc</abbr>i as I go. You should do the same. Not all programming languages have support for an interactive prompt like that, so having it is a privilege worth appreciating.
 
+The `:main` command we have been using in <abbr>ghc</abbr>i is designed to imitate running the program on its own.
+
 
 
 Comments
