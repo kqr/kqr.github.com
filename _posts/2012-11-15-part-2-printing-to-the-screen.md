@@ -76,7 +76,7 @@ In this case, you define the `main` function. *Defining* a function means to sta
 
 > Note that Haskell is case sensitive, and as such, it does not treat `main` and `Main` as the same thing, and neither of them are the same names as `MAIN` or `mAiN`. So far, I have introduced two *different* names, which do *not* refer to the same thing. `Main` is the name of a module, whereas `main` is the name of a function.
 
-The general form of a function definition is
+The general form of this kind of function definition is
 
     〈function name〉 = 〈expression〉
 
