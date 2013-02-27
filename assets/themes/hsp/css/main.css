@@ -20,6 +20,20 @@ div#notfooter {
     margin-right: auto;
 }
 
+div#bottomlink {
+    width: 100%;
+    text-align: right;
+    margin: 0px;
+    margin-top: -23px;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+div#bottomlink a {
+    margin: 0px;
+    padding: 0px;
+}
+
 header {
     display: block;
     padding-left: 12px;
