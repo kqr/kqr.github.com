@@ -59,6 +59,11 @@ the language we now call *machine code*. Machine code is a language expressed
 in numbers, which the <abbr>cpu</abbr> -- *the central processing unit*, the
 computational core of a computer -- is designed to understand.
 
+<!--
+    Picture of a computer reading machine code and exclaiming "Ah! 17!"
+    Text below saying "They really are designed like this, even today."
+-->
+
 Machine code is a language for computers, and as such it is really difficult
 for humans to comprehend. Eventually, programmers got tired of expressing
 themselves in the language of their computers, so they gave names to numbers
@@ -101,6 +106,12 @@ abstractions and would not be recognised as something used for programming by
 someone in the 1940's. Not surprisingly, these are called *high-level
 languages*. Generally, programmers avoid low-level languages these days,
 because they are difficult.
+
+<!--
+    Picture of a punched card next to some Haskell code.
+    Text below: "Can you tell which one is from the 60's and which one is from
+    today?"
+-->
 
 There is one problem with high-level languages, though. The general principle
 is that as you go to a higher level language, the development time will
@@ -165,8 +176,15 @@ In the beginning, Haskell was mostly confined to research, but since the
 mid-1990's, several important features were added to the language and it
 started enjoying adoption outside of computer science faculties. With a new
 standard implemented in 1998, Haskell became a full-fledged general-purpose
-programming language. At the time of writing, the latest official Haskell
-standard was released in 2010.
+programming language.
+
+<!--
+    Picture of a haskell logo running from an ivory tower.
+    Text below: "Haskell has escaped the claws of academia."
+-->
+
+At the time of writing, the latest official Haskell standard was released in
+2010.
 
 Haskell is Unique
 -----------------
@@ -240,6 +258,12 @@ to perform an action on multiple items. Then we perform the action on the
 entire dealership and take a look. The actual computation is performed by
 combining three independent sub-computations.
 
+<!--
+    Picture of lots of cars in various colours, but partly viewed through
+    a pink "lens" that makes them look pink.
+    Text below: "This is the declarative way to style cars."
+-->
+
 The opposite of declarative programming is called *imperative* programming.
 Imperative programming is less about combining independent sub-computations,
 and more about making a list of actions that the computer must perform to reach
@@ -263,6 +287,11 @@ repeat this definition for every action we want to perform. Worst of all,
 though, this second version *actually paints all the cars pink*. If you decide
 it was an ugly colour, you have to manually save somewhere which colour each of
 the cars previously were so you can restore it.
+
+<!--
+    Picture of a guy painstakingly painting a single car pink.
+    Text below: "The traditional imperative way of styling cars is tedious."
+-->
 
 Haskell is declarative, and as such, programs tend to get fairly small and are
 quick to write. The code is also easier to understand and fix when it goes

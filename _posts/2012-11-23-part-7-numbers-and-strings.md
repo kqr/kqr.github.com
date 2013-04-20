@@ -255,7 +255,7 @@ Exercises
           return ()
           putStrLn "So are we done yet?"
           putStrLn "Sure."
-    <div class="label">An involved program with lots of print statements.</div>
+    <div class="label">A complicated program with lots of print statements.</div>
 
     While this might seem like a useless exercise, it is there to train you in thinking critically about data and realising the differences small things make. It should also be a relatively easy exercise if you have spent enough time playing with the things you have learned so far.
 
