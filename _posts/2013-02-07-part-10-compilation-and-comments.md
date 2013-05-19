@@ -33,7 +33,7 @@ The `:main` command we have been using in <abbr>ghc</abbr>i is designed to imita
 Comments
 --------
 
-One thing that's really important in programming is that your code should be readable. Other programmers should be able to read your code and go, "Ah, yes, I undestand how it works." Sometimes, the meaning of a piece of code is obvious, but at times it can be really convoluted. It would then be nice if you could put a little remark in the code for the next programmer to read, that explains what the code does.
+One thing that's really important in programming is that your code should be readable. Other programmers should be able to read your code and go, "Ah, yes, I understand how it works." Sometimes, the meaning of a piece of code is obvious, but at times it can be really convoluted. It would then be nice if you could put a little remark in the code for the next programmer to read, that explains what the code does.
 
 These little remarks are called "comments" in programming lingo. There are two ways to create comments in Haskell. The most common form of comment is started with `--` (two dashes) and continues for the rest of the line. Here is an example from a previous chapter with some comments in it.
 
