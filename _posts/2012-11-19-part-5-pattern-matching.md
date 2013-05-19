@@ -183,7 +183,16 @@ Exercises
 
  *  Write a program that reads three lines from the user, and outputs something special if *all three lines are empty*. This will require a trick on your part to successfully detect whether all the inputs are empty or not. Programming is really about being clever in finding these kinds of tricks. Hint: Use the string append operator.
 
- *  (Warning: difficult exercise.) The `case` pattern matching *is an expression* in itself, and can therefore be used *anywhere where an expression is expected*. This means that you can "nest" pattern matches (put them inside of each other), and therefore perform a second pattern matching only if the first one succeeds or fails.
+ *  (Warning: difficult exercise.) The `case` pattern matching *is an expression* in itself, and can therefore be used *anywhere where an expression is expected*. This means that you can "nest" pattern matches (put them inside of each other), and therefore perform a second pattern matching only if the first one succeeds or fails. It may look something like this:
+
+        case firstName of
+          "John" -> case lastName of
+            "Stevens" -> putStrLn "Cool, you have the exact same name as I!"
+            _ -> putStrLn "You have the same first name as I."
+          _ -> putStrLn "You have a boring name."
+
+    Just make sure to get the indentation right and think of the `case` pattern
+    matching as an expression.
 
     Modify the naïve authenticating program so that it aborts early if the username is wrong, but continues to check the password if the username is right. If the user types the wrong username, the interaction could look like
 
