@@ -54,10 +54,10 @@ The same problem will arise if you try to compare something which is explicitly 
 
 &lt;interactive&gt;:25:16:
     Ambiguous type variable `a0' in the constraints:
+      (Eq a0) arising from a use of `==' at <interactive>:3:14-15
       (Fractional a0)
         arising from the literal `2.2' at &lt;interactive&gt;:25:16-18
       (Integral a0) arising from a use of `floor' at &lt;interactive&gt;:25:2-6
-      (Ord a0) arising from a use of `==' at &lt;interactive&gt;:25:14</pre>
 
 We will therefore have to keep in mind that it seems like you can compare any values, but they have to be the same kind of values. Only compare numbers with numbers; only compare strings with strings; only compare boolean values wit...
 
