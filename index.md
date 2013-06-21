@@ -8,10 +8,20 @@ title: "Haskell Programming"
 
 Hello!
 
-Whoever you are, you have arrived at my attempt to create an **open introductory book to programming**, aimed at people who are experienced with computers but have little to no programming knowledge. This book is unique in a few aspects, and therefore, you will not find a book like this one anywhere else.
+Whoever you are, you have arrived at my attempt to create an **open
+introductory book to programming**, aimed at people who are experienced with
+computers but have little to no programming knowledge. This book is unique in a
+few aspects, and therefore, you will not find a book like this one anywhere
+else.
 
-If you want to get started right away, [the first chapter is this way](/2012/11/11/part-1-introduction). If you want to know what you're getting into, you could always check out the funky reverse [table of contents](/contents.html).
+![An open, introductory Haskell book](/images/open-introductory-haskell.jpg)
 
-If you have no idea who I am and why I'm doing this, read [about me and this book](/about.html).
+If you want to get started right away, [the first chapter is this
+way](/2012/11/11/part-1-introduction). If you want to know what you're getting
+into, you could always check out the funky reverse [table of
+contents](/contents.html).
+
+If you have no idea who I am and why I'm doing this, read [about me and this
+book](/about.html).
 
 

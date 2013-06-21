@@ -290,6 +290,9 @@ I/O computation, you shouldn't use `do`. However, there is little visual
 distinction between the cases, so it might take a while to internalise the rule
 and apply it consistently.
 
+![A worn-out parody on Shakespeare](/images/p02_to-do-or-not-to-do.jpg)
+<div class="ilabel">The worn out parody of Shakespeare.</div>
+
 
 Exercises
 ---------
