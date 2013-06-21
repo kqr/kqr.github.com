@@ -59,8 +59,10 @@ the language we now call *machine code*. Machine code is a language expressed
 in numbers, which the <abbr>cpu</abbr> -- *the central processing unit*, the
 computational core of a computer -- is designed to understand.
 
+<!--
 ![A computer reading machine code](/images/p01_machine-code.jpg)
 <div class="ilabel">They really are designed like this, even today!</div>
+-->
 
 Machine code is a language for computers, and as such it is really difficult
 for humans to comprehend. Eventually, programmers got tired of expressing
@@ -105,9 +107,11 @@ someone in the 1940's. Not surprisingly, these are called *high-level
 languages*. Generally, programmers avoid low-level languages these days,
 because they are difficult.
 
+<!--
 ![Punched cards vs Haskell code](/images/p01_punch_card.jpg)
 <div class="ilabel">Can you tell which one is from the 60's and which one is
 from today?</div>
+-->
 
 There is one problem with high-level languages, though. The general principle
 is that as you go to a higher level language, the development time will
@@ -174,9 +178,11 @@ started enjoying adoption outside of computer science faculties. With a new
 standard implemented in 1998, Haskell became a full-fledged general-purpose
 programming language.
 
+<!--
 ![A Haskell logo running from an ivory tower](/images/p01_ivory-tower.jpg)
 <div class="ilabel">Haskell has escaped the ivory tower and the claws of
 academia.</div>
+-->
 
 At the time of writing, the latest official Haskell standard was released in
 2010.
