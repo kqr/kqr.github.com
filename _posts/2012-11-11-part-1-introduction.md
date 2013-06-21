@@ -59,10 +59,8 @@ the language we now call *machine code*. Machine code is a language expressed
 in numbers, which the <abbr>cpu</abbr> -- *the central processing unit*, the
 computational core of a computer -- is designed to understand.
 
-<!--
 ![A computer reading machine code](/images/p01_machine-code.jpg)
 <div class="ilabel">They really are designed like this, even today!</div>
--->
 
 Machine code is a language for computers, and as such it is really difficult
 for humans to comprehend. Eventually, programmers got tired of expressing
