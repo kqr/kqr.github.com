@@ -21,14 +21,6 @@ the three steps are executed multiple times each second.)
 ![Input from the keyboard entering the computer and then continuing on to the monitor](/images/p02_ico.jpg)
 <div class="ilabel">The three steps of a computer program.</div>
 
-<!--
-    Picture showing a person typing letters into a keyboard, the letters
-    following along a cable into the computer, the computer doing something
-    to them and then the letters coming out on a cable on the other side
-    and getting displayed on a screen. (Perhaps reversed?)
-    Text below: "The basic operation of a computer program."
--->
-
 Printing something to the user or receiving input from the user is collectively
 referred to as *performing I/O*. (I/O is short for Input and Output.) Steps one
 and three consists of performing I/O, while the middle step could be performed
