@@ -18,6 +18,9 @@ These three steps might be executed once (to calculate something particular),
 or they might repeat indefinitely (for example in a real-time video game, where
 the three steps are executed multiple times each second.)
 
+![Input from the keyboard entering the computer and then continuing on to the monitor](/images/p02_ico.jpg)
+<div class="ilabel">The three steps of a computer program.</div>
+
 <!--
     Picture showing a person typing letters into a keyboard, the letters
     following along a cable into the computer, the computer doing something
