@@ -123,6 +123,9 @@ side, you find zero or more slots for inserting data. On the other side, you
 find a single slot where data can come out. The data that comes out is somehow
 computed from the data that you put in.
 
+![A function illustrated as a black box](/images/p02_black-box-function.jpg)
+<div class="ilabel">One way to picture a function as an impenetrable black box.</div>
+
 Sometimes you know how this computation is performed, and sometimes you do not.
 Often, you do not *need* to know how the computation is performed, unless you
 want to design the box yourself. Consider a function that computes the square a
