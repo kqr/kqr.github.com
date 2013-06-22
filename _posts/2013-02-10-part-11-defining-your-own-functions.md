@@ -105,6 +105,9 @@ keep to letters in the English alphabet. The argument name follows the same
 rules as the function name, with regards to what symbols are allowed. The
 function will compute the value that is described by the expression.
 
+![A schematic of our own custom black box](/images/p11_pricebox.jpg)
+<div class="ilabel">This is how one can imagine how our own, custom, price box looks inside, with two other boxes connected.</div>
+
 When you evaluate a function, the argument name will refer to the argument you
 put into the function. In our case, if we try to evaluate `price 22`, then
 `miles` will refer to the value of 22. I'll try to put this into a concrete

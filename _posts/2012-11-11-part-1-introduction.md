@@ -331,6 +331,10 @@ and pointy language, and if you do not care for what you are doing, you will
 eventually run into those pointy bits and hurt yourself. If you do care for
 what you are doing, though, you can use the pointy bits to fend off evil.
 
+![A guy sitting behind pointy shields fending off bugs](/images/p01_sharp-pointy.jpg)
+<div class="ilabel">Haskell deployed properly to fend off against the evil
+bugs!</div>
+
 
 The Haskell Platform
 --------------------
