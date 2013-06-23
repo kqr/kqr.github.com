@@ -31,9 +31,16 @@ to a value. In the case of
 we say that we evaluate the `max` function with the arguments `3.9` and `4.7`,
 and it computes `4.7`.
 
-> In the English language, there are about a hundred different ways to say "evaluate a function" and every programming language community seems to have their own way of referring to it. Hopefully, we will only have to deal with a few.
+> In the English language, there are about a hundred different ways to say
+> "evaluate a function" and every programming language community seems to have
+> their own way of referring to it. Hopefully, we will only have to deal with a
+> few.
 >
-> If you are coming from other programming languages, you are probably used to say "return value" when you mean the value you get back from a function. You could call it that in Haskell as well, but it might confuse you because of the `return ()` oddity. I would recommend just "computed value" or something along those lines.
+> If you are coming from other programming languages, you are probably used to
+> say "return value" when you mean the value you get back from a function. You
+> could call it that in Haskell as well, but it might confuse you because of
+> the `return ()` oddity. I would recommend just "computed value" or something
+> along those lines.
 
 
 Why functions?
@@ -61,9 +68,17 @@ drive different distances. It might look something like this:
       putStrLn ("2000 miles: $" ++ show (300 + 2000 * 0.5) ++ ".")
 <div class="label">Repetitive code to calculate the price of a rental car</div>
 
-While this is a really handy program, it suffers from one problem: *code repetition*. Just like we humans don't like to repeat ourselves when we speak to each other, we programmers don't like to repeat ourselves when we speak to the computer. In this program, we have written `300 + 〈something〉 * 0.5` so many times, and the only difference is really the "something" bit of it.
+While this is a really handy program, it suffers from one problem: *code
+repetition*. Just like we humans don't like to repeat ourselves when we speak
+to each other, we programmers don't like to repeat ourselves when we speak to
+the computer. In this program, we have written `300 + 〈something〉 * 0.5` so
+many times, and the only difference is really the "something" bit of it.
 
-It feels like there should be some way to "teach" the computer how to calculate the price for a rental car, if you just tell it how far it is driven. This is where functions come in. When we are tired of writing the same computation over and over, we can tell the computer just *once* how to do the computation, and then we don't need to write it anymore.
+It feels like there should be some way to "teach" the computer how to calculate
+the price for a rental car, if you just tell it how far it is driven. This is
+where functions come in. When we are tired of writing the same computation over
+and over, we can tell the computer just *once* how to do the computation, and
+then we don't need to write it anymore.
 
 
 
@@ -163,7 +178,9 @@ your program -- whether it is the name of a function or a variable -- has a
 limited "visibility." The visibility of the name decides where the computer is
 able to see (and use) the definition of a variable or function.
 
-> Note: What I call "visibility" is more often referred to as "scope" in classical programming literature, but I believe "visibility" is a much more descriptive term.
+> Note: What I call "visibility" is more often referred to as "scope" in
+> classical programming literature, but I believe "visibility" is a much more
+> descriptive term.
 
 Consider the following program.
 
@@ -392,5 +409,55 @@ We will get to know more about this in the next chapter.
 Exercises
 ---------
 
-There are no exercises for this chapter yet.
+ *  Write a function that converts a temperature from Celsius to Fahrenheit
+    using the formula `celsius * 1.8 + 32`. If you want to, you can start with
+    the following skeleton – just change `undefined` to whatever you want your
+    computation to look like.
+    
+    If this exercise seems difficult ("where do I
+    start?"), read this part again while keeping this exercise in your head,
+    and everything should clear up.
+
+        cels2fahr temperature = undefined
+
+    Examples of usage with the interpreter:
+
+        *Main> cels2fahr 36.9
+        98.42
+        *Main> cels2fahr (-40)
+        -40.0
+        *Main> cels2fahr 13
+        55.400000000000006
+
+    The last one may look odd, surely it's supposed to be just 55.4? You're
+    right. Your computer, however, can't handle *any* number, so it picks the
+    closest number it can handle, which happens to be a tad more than what
+    you wanted it to be. This is a problem that doesn't occur with integers,
+    only fractional numbers.
+
+ *  Write a function that converts from US dollars to Euros, by multiplying the
+    US dollar amount by `0.76`. The function can tell us that $40 is roughly 30
+    euros:
+
+        *Main> currencyConvert 40
+        30.4
+
+ *  Write a `greeter` function with the side effect that greets somebody when you
+    give it a name. Interaction with the interpreter might look like
+
+        *Main> greeter "John"
+        Hello, John
+
+    (Note the absence of quotation marks around the printed result! This means
+    the greeting is a side effect.)
+ 
+ *  Write a `greeting` function that is *pure*, and evaluates to a string with a
+    greeting. Interaction could look like
+
+        *Main> greeting "Sophia"
+        "Welcome, Sophia!"
+
+    (Note that "pure" means that it can't use `putStr` or any variation of
+    that – the function should evaluate to a string.)
+ 
 
